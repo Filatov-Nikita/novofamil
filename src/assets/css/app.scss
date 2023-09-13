@@ -1,0 +1,143 @@
+@import '../fonts/stolz/styles.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './cover.scss';
+@import './decor-rock.scss';
+
+@layer base {
+  body {
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    @apply tw-font-arial tw-text-sm tw-text-secondary;
+  }
+}
+
+@layer components {
+  .wrapper {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .dialog-full {
+    position: fixed;
+    z-index: 900;
+    @apply tw-inset-0 tw-bg-primary;
+  }
+
+  .h1 {
+    @apply tw-text-lg tw-leading-100 tw-font-normal tw-text-dark tw-font-stolz;
+  }
+
+  .layout-base {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 100%;
+  }
+
+  .page-pt {
+    @apply tw-pt-30
+  }
+
+  .page-pb {
+    @apply tw-pb-40
+  }
+
+  .button-back {
+    @apply tw-text-secondary tw-underline tw-text-base;
+  }
+
+  .app-scroll-x::-webkit-scrollbar {
+    height: 1px;
+  }
+
+  .app-scroll-y::-webkit-scrollbar {
+    width: 1px;
+  }
+
+  .app-scroll-x::-webkit-scrollbar-track, .app-scroll-y::-webkit-scrollbar-track {
+    @apply tw-bg-dark;
+  }
+
+  .app-scroll-x::-webkit-scrollbar-thumb, .app-scroll-y::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(90deg, #FD8713 -0.33%, #C83E04 99.48%);
+    border-radius: 10px;
+  }
+
+  .list-marker::before {
+    content: '';
+    width: 14px;
+    height: 14px;
+    margin-right: 13px;
+    border: 4px solid var(--color);
+    border-radius: 4px;
+    flex-shrink: 0;
+    transform: rotate(-45deg);
+  }
+
+  @screen md {
+    .wrapper {
+      max-width: 768px;
+      padding-left: 34px;
+      padding-right: 34px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  @screen lg {
+    .wrapper {
+      max-width: 1024px;
+    }
+  }
+
+  @screen xl {
+    .wrapper {
+      padding-left: 40px;
+      padding-right: 40px;
+      max-width: 1200px;
+    }
+  }
+
+  @screen 2xl {
+    .wrapper {
+      max-width: 1920px;
+      padding-left: 195px;
+      padding-right: 195px;
+    }
+
+    .h1 {
+      @apply tw-text-xl;
+    }
+
+    .xl-separator::after {
+      content: "";
+      position: absolute;
+      width: 1px;
+      background: theme('colors.dark-line');
+      opacity: 0.15;
+      height: 100%;
+      left: calc(50% - 78px);
+      top: 0;
+    }
+  }
+}
+
+:root {
+  --g-dialog-content-shadow: none;
+}
+
+.vue-notification {
+  padding: 20px 16px !important;
+  font-size: 16px !important;
+  font-family: Nexa, sans-serif !important;
+  border-radius: 6px;
+  letter-spacing: 0.02em;
+}
+
+
+.vue-notification.error {
+  background: theme('colors.negative') !important;
+  border-left-color: rgb(194, 7, 7) !important;
+}
