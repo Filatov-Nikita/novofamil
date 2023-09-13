@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'Nord Star';
+  src: url('./Nord-Star-Deco.woff2'),
+  url('./Nord-Star-Deco.woff');
+  font-weight: 400;
+  font-style: normal;
+}

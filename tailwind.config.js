@@ -81,6 +81,7 @@ module.exports = {
     fontFamily: {
       'stolz': ['stolz', 'Arial', 'sans-serif'],
       'arial': ['Arial', 'sans-serif'],
+      'nord': ['Nord Star', 'Arial', 'sans-serif'],
     }
   },
   plugins: [
