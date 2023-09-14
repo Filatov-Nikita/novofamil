@@ -1,5 +1,5 @@
 <template>
-  <div class="layout-base tw-bg-primary tw-min-h-screen" :class="{ 'decor-cropped': decor }">
+  <div class="layout-base tw-min-h-screen" :class="{ 'decor-cropped': decor }">
     <Header />
     <router-view />
     <Footer />

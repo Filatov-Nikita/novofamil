@@ -22,7 +22,7 @@ module.exports = {
     },
     colors: {
       orange: '#FA864B',
-      orangeHover: '#E99512',
+      orangeHover: '#EE7F46',
       white: '#F5F5F5',
       gray: '#9BA5B0',
       primary: '#F5F5F5',
