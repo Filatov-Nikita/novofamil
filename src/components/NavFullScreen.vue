@@ -3,37 +3,44 @@
     <div class="layout-base tw-min-h-full">
       <Header />
       <div class="nav-page nav-bg">
-        <div class="list">
-          <div class="tw-space-y-20 lg:tw-space-y-30">
-            <router-link
-              class="tw-block tw-text-md lg:tw-text-lg"
-              v-for="item in nav"
-              :to="item.to"
-            >
-              {{ item.label }}
-            </router-link>
-          </div>
+        <div class="wrapper tw-h-full tw-flex tw-items-center">
+          <div class="list">
+            <div class="lg:tw-flex lg:tw-flex-wrap lg:-tw-m-24">
+              <div
+                class="lg:tw-p-24"
+                v-for="item in nav"
+              >
+                <router-link
+                  class="tw-block tw-text-md lg:tw-text-[32px] tw-font-nord tw-text-white tw-leading-120 lg:tw-py-16 tw-py-12"
+                  active-class="tw-text-orange"
+                  :to="item.to"
+                >
+                  {{ item.label }}
+                </router-link>
+              </div>
+            </div>
 
-          <div class="tw-max-w-[340px] tw-pt-30 -tw-mt-20 -tw-ml-20 tw-flex tw-flex-wrap">
-            <div class="tw-pl-20 tw-pt-20 tw-w-full lg:tw-w-1/2">
-              <router-link class="tw-text-base tw-text-blue tw-underline tw-leading-100" :to="{ name: 'news' }">
-                Новости и акции
-              </router-link>
-            </div>
-            <div class="tw-pl-20 tw-pt-20 tw-w-full lg:tw-w-1/2">
-              <router-link class="tw-text-base tw-text-blue tw-underline tw-leading-100" :to="{ name: 'progress' }">
-                Ход строительства
-              </router-link>
-            </div>
-            <div class="tw-pl-20 tw-pt-20 tw-w-full lg:tw-w-1/2">
-              <router-link class="tw-text-base tw-text-blue tw-underline tw-leading-100" :to="{ name: 'documents' }">
-                Документы
-              </router-link>
-            </div>
-            <div class="tw-pl-20 tw-pt-20 tw-w-full lg:tw-w-1/2">
-              <router-link class="tw-text-base tw-text-blue tw-underline tw-leading-100" :to="{ name: 'developer' }">
-                Застройщик
-              </router-link>
+            <div class="tw-max-w-[340px] tw-pt-24 md:tw-pt-30 -tw-ml-24 tw-flex tw-flex-wrap">
+              <div class="tw-pl-24 tw-w-full lg:tw-w-1/2">
+                <router-link class="tw-block tw-text-base tw-text-third tw-underline tw-leading-100 tw-py-8" :to="{ name: 'news' }">
+                  Новости и акции
+                </router-link>
+              </div>
+              <div class="tw-pl-24 tw-w-full lg:tw-w-1/2">
+                <router-link class="tw-block tw-text-base tw-text-third tw-underline tw-leading-100 tw-py-8" :to="{ name: 'documents' }">
+                  Документы
+                </router-link>
+              </div>
+              <div class="tw-pl-24 tw-w-full lg:tw-w-1/2">
+                <router-link class="tw-block tw-text-base tw-text-third tw-underline tw-leading-100 tw-py-8" :to="{ name: 'progress' }">
+                  Ход строительства
+                </router-link>
+              </div>
+              <div class="tw-pl-24 tw-w-full lg:tw-w-1/2">
+                <router-link class="tw-block tw-text-base tw-text-third tw-underline tw-leading-100 tw-py-8" :to="{ name: 'developer' }">
+                  Застройщик
+                </router-link>
+              </div>
             </div>
           </div>
         </div>
@@ -91,68 +98,39 @@ export default {
 
 <style scoped>
 
-.nav-page {
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 1fr;
-}
-
 .list {
-  padding: 30px 16px;
-}
-
-@screen md {
-  .nav-page {
-    grid-template-areas: "col nav";
-    grid-template-columns: 1fr 320px;
-  }
-
-  .list {
-    grid-area: nav;
-    padding-top: 100px;
-    padding-bottom: 100px;
-    padding-left: 0px;
-    padding-right: 80px;
-  }
-
-  .nav-bg {
-    background-image: url(@/assets/images/figure.png);
-    background-repeat: no-repeat;
-    background-size: 690px 690px;
-    background-position: -130px bottom;
-  }
+  padding: 30px 0;
 }
 
 @screen lg {
-  .nav-page {
-    grid-template-columns: 1fr 520px;
-  }
-
-  .nav-bg {
-    background-size: 830px 830px;
-    background-position: -200px -50px;
-  }
-}
-
-@screen xl {
-  .nav-page {
-    grid-template-columns: 50% 50%;
-  }
   .list {
-    padding-top: 50px;
-    padding-bottom: 100px;
+    max-width: 700px;
+  }
+
+  .nav-page {
+    position: relative;
+    z-index: 0;
+  }
+
+  .nav-bg::after {
+    content: '';
+    display: block;
+    background-image: url(@/assets/images/decor-key.svg);
+    background-size: cover;
+    position: absolute;
+    right: 0px;
+    bottom: -50px;
+    z-index: -1;
+    width: 820px;
+    height: 642px;
   }
 }
 
 @screen 2xl {
-  .nav-bg {
-    background-size: 830px 830px;
-    background-position: 0 bottom;
-  }
-
-  .list {
-    padding-top: 100px;
-    padding-bottom: 100px;
+  .nav-bg::after {
+    width: 1210px;
+    height: 760px;
+    bottom: -80px;
   }
 }
 </style>
