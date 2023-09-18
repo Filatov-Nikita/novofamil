@@ -4,7 +4,7 @@
     <div class="slider">
       <div class="text">
         <div class="text-p">
-          <p class="tw-font-stolz tw-text-lg 2xl:tw-text-xl tw-font-normal tw-leading-120" v-html="slide.text"></p>
+          <p class="tw-font-nord tw-text-[32px] 2xl:tw-text-xl tw-font-normal tw-text-white tw-leading-120" v-html="slide.text"></p>
         </div>
         <div class="controls tw-mt-30 lg:tw-mt-60">
           <div
@@ -66,8 +66,8 @@ export default {
   async created() {
     if(!this.hasBanners) await this.getBanners();
     if(this.hasBanners && !this.bannerWasShown) {
-      this.showedBanners = true;
-      this.$store.commit('setBannerWasShown', true);
+      // this.showedBanners = true;
+      // this.$store.commit('setBannerWasShown', true);
     }
   },
   mounted() {
@@ -81,40 +81,8 @@ export default {
       current: 0,
       slides: [
         {
-          text: 'Старт продаж квартир <br class="md:tw-hidden lg:tw-block"> в&nbsp;новом доме',
-          image: require('@/assets/images/main/home.jpg'),
-        },
-        {
-          text: 'Старт продаж квартир <br class="md:tw-hidden lg:tw-block"> в&nbsp;новом доме',
-          image: require('@/assets/images/main/r1.jpg'),
-        },
-        {
-          text: 'Старт продаж квартир <br class="md:tw-hidden lg:tw-block"> в&nbsp;новом доме',
-          image: require('@/assets/images/main/r3.jpg'),
-        },
-        {
-          text: 'Старт продаж квартир <br class="md:tw-hidden lg:tw-block"> в&nbsp;новом доме',
-          image: require('@/assets/images/main/r4.jpg'),
-        },
-        {
-          text: 'Старт продаж квартир <br class="md:tw-hidden lg:tw-block"> в&nbsp;новом доме',
-          image: require('@/assets/images/main/r5.jpg'),
-        },
-        {
-          text: 'Старт продаж квартир <br class="md:tw-hidden lg:tw-block"> в&nbsp;новом доме',
-          image: require('@/assets/images/main/r6.jpg'),
-        },
-        {
-          text: 'Старт продаж квартир <br class="md:tw-hidden lg:tw-block"> в&nbsp;новом доме',
-          image: require('@/assets/images/main/r7.jpg'),
-        },
-        {
-          text: 'Старт продаж квартир <br class="md:tw-hidden lg:tw-block"> в&nbsp;новом доме',
-          image: require('@/assets/images/main/r8.jpg'),
-        },
-        {
-          text: 'Старт продаж квартир <br class="md:tw-hidden lg:tw-block"> в&nbsp;новом доме',
-          image: require('@/assets/images/main/r9.jpg'),
+          text: 'Новый формат комфорта в Зеленой роще',
+          image: require('@/assets/images/main/home.jpeg'),
         },
       ]
     }
@@ -170,12 +138,13 @@ export default {
     grid-template-columns: 100%;
     grid-template-rows: 1fr auto;
     row-gap: 30px;
-    padding: 30px 16px;
   }
 
   .text {
     grid-area: text;
     align-self: center;
+    padding-left: 16px;
+    padding-bottom: 30px;
   }
 
   .text-p {
@@ -188,7 +157,6 @@ export default {
   }
 
   .imgOne {
-    border-radius: 24px;
     position: absolute;
     inset: 0;
     opacity: 0;
@@ -227,17 +195,15 @@ export default {
     display: inline-block;
     box-sizing: content-box;
     vertical-align: middle;
-    @apply tw-bg-opacity-15 tw-bg-dark-line;
+    @apply tw-bg-base-500;
   }
 
   .controlOne-active::before {
-    border: 4px solid #C5EAFF;
+    border: 4px solid theme('colors.orange');
+    @apply tw-bg-white;
   }
 
   @screen md {
-    .slider {
-      padding: 30px 40px;
-    }
     .text-p {
       max-width: 490px;
     }
@@ -249,9 +215,15 @@ export default {
       grid-template-columns: 400px 1fr;
       grid-template-rows: auto;
       column-gap: 17px;
+      padding-left: 40px;
     }
     .text-p {
-      max-width: 343px;
+      max-width: 308px;
+    }
+
+    .text {
+      padding-left: 0px;
+      padding-bottom: 0px;
     }
   }
 
@@ -261,7 +233,7 @@ export default {
     }
 
     .text-p {
-      max-width: 380px;
+      max-width: 424px;
     }
   }
 </style>
