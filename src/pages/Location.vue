@@ -59,49 +59,49 @@ export default {
           name: "all",
           label: "Все",
           icon: "location",
-          fill: "#C83E04",
+          fill: "#4C7D86",
         },
         {
           name: "razv",
           label: "Развлечения",
           icon: "smile",
-          fill: "#B618A0",
+          fill: "#4C7D86",
         },
         {
           name: "school",
           label: "Школы",
           icon: "edu",
-          fill: "#15DBB9",
+          fill: "#4C7D86",
         },
         {
           name: "sport",
           label: "Спорт",
           icon: "sport",
-          fill: "#0C9550",
+          fill: "#4C7D86",
         },
         {
           name: "det",
           label: "Детские сады",
           icon: "horse",
-          fill: "#F99C13",
+          fill: "#4C7D86",
         },
         {
           name: "health",
           label: "Здоровье",
           icon: "health",
-          fill: "#EC2121",
+          fill: "#4C7D86",
         },
         {
           name: "market",
           label: "Магазины",
           icon: "market",
-          fill: "#0DACFF",
+          fill: "#4C7D86",
         },
         {
           name: "bus",
           label: "Остановки",
           icon: "bus",
-          fill: "#2D2DFF",
+          fill: "#4C7D86",
         },
       ],
       points: getPoints(),
@@ -343,7 +343,7 @@ function getPoints() {
     },
 
 
-    
+
     {
       id: setId(),
       category: "sport",
@@ -517,7 +517,7 @@ function getPoints() {
     //   name: "Совкомбанк, банкточка банковского обслуживания",
     // },
 
-    
+
   ];
 }
 </script>
