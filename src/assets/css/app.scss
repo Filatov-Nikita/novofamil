@@ -34,6 +34,9 @@
     display: grid;
     grid-template-rows: auto 1fr auto;
     grid-template-columns: 100%;
+  }
+
+  .bg-main, .layout-base {
     background: radial-gradient(78.67% 69.69% at 50% 50%, #1F5C68 0%, #102B31 100%);
   }
 

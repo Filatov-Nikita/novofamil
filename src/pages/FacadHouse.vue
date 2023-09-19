@@ -1,7 +1,10 @@
 <template>
-  <div class="tw-bg-primary layout tw-min-h-screen">
+  <div class="bg-main layout tw-min-h-screen">
     <Header ref="header" />
-    <main>
+    <main class="tw-relative">
+      <div class="tw-hidden xl:tw-block tw-absolute tw-top-[40px] tw-left-40 tw-pr-20">
+        <h1 class="h1">Подбор<br>На фасаде</h1>
+      </div>
       <PopupStorey v-if="activeStorey" :storey="activeStorey" />
       <HousePlan
         :activeStorey="hoverStorey"
