@@ -4,9 +4,9 @@
       <div class=" grid xl:tw-h-full">
         <div class=" tw-overflow-hidden xl:tw-border-r xl:tw-border-r-base-500 tw-pt-32 xl:tw-pr-[78px] xl:tw-pt-[84px] 2xl:tw-pt-[100px]">
           <h1 class="h1 tw-mb-20 md:tw-mb-30 2xl:tw-mb-40">Условия покупки</h1>
-          
+
             <div
-              class="tw-flex tw-pb-20 tw-overflow-x-auto tw-mb-30 md:tw-mb-10 app-scroll-x xl:tw-flex-wrap xl:tw-max-w-[460px] xl:-tw-mx-10 xl:-tw-mt-10"
+              class="tw-flex tw-pb-20 tw-overflow-x-auto tw-mb-30 md:tw-mb-10 app-scroll-x xl:tw-flex-wrap xl:-tw-mx-10 xl:-tw-mt-10"
             >
               <TabsItem
                 class="tw-shrink-0 tw-mr-20 last:tw-mr-0 xl:tw-mx-10 xl:tw-mt-10"
@@ -18,23 +18,23 @@
                 @click="tabValue = tab.icon"
               />
             </div>
-          
+
 
         </div>
-        <TabsContent v-model="tabValue" class=" xl:tw-justify-self-center  xl:tw-pt-[84px] 2xl:tw-pt-[100px] ">
+        <TabsContent v-model="tabValue" class=" xl:tw-justify-self-center xl:tw-pt-[84px] 2xl:tw-pt-[100px] tw-pl-20 2xl:tw-pl-[60px]">
           <TabsContentItem
             v-for="(section, key) in content"
             :key="key"
             :name="key"
           >
             <section>
-              <h2 class="tw-text-md tw-text-secondary tw-mb-20 2xl:tw-text-lg">
+              <h2 class="tw-text-[32px] tw-text-white tw-uppercase tw-font-nord tw-mb-20 2xl:tw-text-lg">
                 {{ tabs[key].label }}
               </h2>
               <p class="tw-mb-20 2xl:tw-mb-30 tw-text-gray" v-if="key === 'tradein'">{{ tradeinTitle }}</p>
               <ul class="2xl:tw-flex 2xl:tw-flex-wrap 2xl:-tw-ml-48 -tw-mt-10">
                 <li
-                  class="tw-text-sm tw-text-gray tw-flex list-marker 2xl:tw-w-1/2 2xl:tw-pl-48 tw-pt-10"
+                  class="tw-text-sm tw-text-white tw-flex list-marker 2xl:tw-w-1/2 2xl:tw-pl-48 tw-pt-10"
                   v-for="(li, i) in content[key]"
                   :key="i"
                   :style="{ '--color': tabs[key].fill }"
@@ -44,7 +44,7 @@
               </ul>
               <AppButton
                 v-if="tabValue === 'calc'"
-                class="tw-mt-30"
+                class="tw-mt-30 tw-w-full"
                 :to="{ name: 'credit-calc' }"
                 @click="$router.push({ name: 'credit-calc' })"
               >
@@ -70,31 +70,31 @@ export default {
           label: 'Ипотека',
           icon: 'calc',
           fill: '#3AB2ED',
-          class: '2xl:-tw-order-4 2xl:tw-basis-[160px]'
+          class: '2xl:-tw-order-4'
         },
         bank: {
           label: 'Рассрочка',
           icon: 'bank',
           fill: '#9BA5B0',
-          class: '2xl:tw-basis-[160px]'
+          class: ''
         },
         rub: {
           label: 'Наличный расчёт',
           icon: 'rub',
           fill: '#FFBC6B',
-          class: '2xl:-tw-order-3 2xl:tw-basis-[210px]'
+          class: '2xl:-tw-order-3'
         },
         mat: {
           label: 'Материнский капитал',
           icon: 'mat',
           fill: '#FE8DEE',
-          class: '2xl:tw-basis-[210px]'
+          class: ''
         },
         tradein: {
           label: 'Трейд-Ин',
           icon: 'tradein',
           fill: '#FBB03B',
-          class: '2xl:tw-basis-[160px]'
+          class: ''
         },
       },
       content: {
