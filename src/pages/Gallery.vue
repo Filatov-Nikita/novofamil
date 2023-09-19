@@ -1,5 +1,5 @@
 <template>
-  <app-page>
+  <app-page class=" lg:tw-pb-60 2xl:tw-pb-20">
     <SwiperGallery v-if="gallery" :sources="images" />
   </app-page>
 </template>
