@@ -84,7 +84,7 @@ export default createStore({
           json: {
             client_id: process.env.VUE_APP_CLIENT_ID,
             client_secret: process.env.VUE_APP_CLIENT_SECRET,
-            email_ids: [2],
+            email_ids: [1],
             theme: theme,
             user_name: name,
             user_phone: cellphone,
