@@ -16,7 +16,7 @@
       <SelectSlider
         class="tw-mb-32"
         :min="1"
-        :max="25"
+        :max="14"
         :value1="val1"
         :value2="val2"
         @update:range="handleChange"

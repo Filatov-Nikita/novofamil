@@ -15,8 +15,8 @@
     >
       <SelectSlider
         class="tw-mb-32"
-        :min="33"
-        :max="150"
+        :min="24"
+        :max="138"
         :value1="val1"
         :value2="val2"
         :displayVal="(val) => `${val} м<sup>2</sup>`"

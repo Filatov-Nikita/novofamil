@@ -53,6 +53,10 @@ export default {
           id: 2,
           label: '2'
         },
+        {
+          id: 3,
+          label: '3'
+        },
       ]
     };
   },

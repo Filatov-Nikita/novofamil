@@ -44,7 +44,7 @@ export default {
   emits: ['update:modelValue'],
   data() {
     return {
-      rooms: [1, 2, 3, 4]
+      rooms: [1, 2, 3]
     };
   },
   methods: {
