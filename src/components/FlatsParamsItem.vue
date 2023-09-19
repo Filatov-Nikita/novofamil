@@ -1,18 +1,18 @@
 <template>
   <router-link
-    class="tw-text-secondary tw-py-20 tw-px-16 tw-border-b tw-w-full md:tw-border-r tw-border-dark-line tw-border-opacity-15 md:tw-w-1/2 tw-flex tw-flex-wrap xl:hover:tw-bg-[#f1f1f1] xl:tw-transition-colors"
+    class="tw-text-secondary tw-p-16 xl:tw-p-40 tw-border-b tw-w-full md:tw-border-r tw-border-[#D6DEDF] tw-border-opacity-60 md:tw-w-1/2 xl:tw-w-1/3 2xl:tw-w-1/4 xl:hover:tw-bg-[#f1f1f1] xl:tw-transition-colors"
     :to="{ name: 'flats.one', params: { id: item.id } }"
   >
-    <div class="xl:tw-w-1/2 2xl:tw-w-1/3">
-      <p class="tw-text-secondary tw-font-stolz tw-text-lg tw-leading-100 tw-mb-10">
+    <div>
+      <p class="tw-text-base-700 tw-font-nord tw-text-[32px] tw-leading-100 tw-mb-10">
         {{ item.total_area }} <span>м<sup>2</sup></span>
       </p>
-      <div class="tw-mb-6">
+      <div class="tw-mb-6 tw-text-third">
         <p>Секция {{ item.entrance }}  •  Этаж {{ item.storey_number }} •  {{ roomLabel }}</p>
       </div>
     </div>
 
-    <div class="tw-mb-20 tw-mt-20 tw-w-full xl:tw-mt-0 xl:tw-w-1/2 xl:tw-pr-30 xl:tw-pl-10 2xl:tw-w-1/3">
+    <div class="tw-mt-16 tw-w-full">
       <img
         v-if="item.images"
         class="tw-w-auto tw-h-[200px] tw-object-contain tw-object-top tw-mx-auto"

@@ -2,7 +2,9 @@
 module.exports = {
   content: ["./src/**/*.{vue,js}"],
   safelist: [
-    'tw-fill-secondary'
+    'tw-fill-secondary',
+    'tw-fill-third',
+    'tw-fill-base-700',
   ],
   prefix: 'tw-',
   theme: {

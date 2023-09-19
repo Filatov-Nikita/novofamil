@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="tw-flex tw-text-gray tw-text-xs tw-mb-8">
+    <div class="tw-flex tw-text-third tw-text-xs tw-mb-8">
       <p v-html="displayVal(val1)"></p>
       <div class="tw-grow tw-px-4"></div>
       <p v-html="displayVal(val2)"></p>
@@ -201,7 +201,7 @@ export default {
 }
 
 .slider__icon {
-  @apply tw-stroke-gray tw-mx-auto;
+  @apply tw-stroke-secondary tw-mx-auto;
 }
 
 .range {
@@ -209,6 +209,6 @@ export default {
 }
 
 .area {
-  @apply tw-h-[1px] tw-bg-gray tw-relative;
+  @apply tw-h-[1px] tw-bg-secondary tw-relative;
 }
 </style>

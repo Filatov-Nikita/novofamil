@@ -29,7 +29,7 @@
         </section>
       </div>
     </div>
-    <section class="tw-bg-white">
+    <section class="tw-bg-white tw-pt-32">
       <div class="wrapper">
         <div :class="{ 'tw-absolute': flats }" v-if="$store.getters['loaders/is']('loading flats')">
           <Spinner size="100px" />
@@ -38,16 +38,16 @@
           <div class="md:tw-flex md:tw-justify-between">
             <div class="tw-mb-20 tw-items-start tw-flex tw-flex-wrap tw-gap-x-30 tw-gap-y-10 md:tw-mb-0 md:tw-order-1">
               <button @click="clearFilter" class="tw-flex">
-                <AppIcon class="tw-mr-10" name="reset" size="18px" fill="gray" />
-                <span class="tw-text-gray tw-text-sm tw-leading-100 tw-mt-4">Сбросить фильтр</span>
+                <AppIcon class="tw-mr-10" name="reset" size="18px" fill="base-700" />
+                <span class="tw-text-base-700 tw-text-sm tw-leading-100 tw-mt-4">Сбросить фильтр</span>
               </button>
 
               <button class="tw-flex" @click="changeOrder">
-                <span class="tw-mr-10 tw-text-gray tw-text-sm tw-leading-100 tw-mt-4">Цена по возрастанию</span>
-                <AppIcon class="tw-stroke-gray" :class="{ 'tw-rotate-180': filter.sortOrder === 'asc' }" name="arrow-down" size="18px" />
+                <span class="tw-mr-10 tw-text-base-700 tw-text-sm tw-leading-100 tw-mt-4">Цена по возрастанию</span>
+                <AppIcon class="tw-stroke-base-700" :class="{ 'tw-rotate-180': filter.sortOrder === 'asc' }" name="arrow-down" size="18px" />
               </button>
             </div>
-            <p class="lg:tw-text-lg tw-text-md tw-text-secondary tw-leading-100 tw-mb-30">
+            <p class="tw-text-md tw-text-base-700 tw-font-nord tw-uppercase tw-leading-100 tw-mb-30">
               Найдено {{ flats.length }} квартир
             </p>
           </div>
