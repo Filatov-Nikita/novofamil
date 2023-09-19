@@ -2,7 +2,7 @@
   <app-page class="tw-pt-0">
     <div class="wrapper tw-h-full">
       <div class=" grid tw-h-full">
-        
+
         <div class="left app-scroll-y xl:tw-border-r xl:tw-border-r-base-500 tw-pt-32 xl:tw-pr-[78px]">
           <h1 class="h1 tw-mb-24">Новости и акции</h1>
           <NewsList v-if="items" :items="items" />
@@ -23,9 +23,9 @@
             <Spinner size="120px" />
           </div>
         </div>
-        
+
       </div>
-      <div class="2xl:tw-h-full news">
+      <div class="news">
         <DialogNewsShow v-if="!$grid['xl']" :content="detailed" />
       </div>
     </div>
@@ -115,8 +115,11 @@ export default {
 <style scoped>
 @screen lg {
   .grid {
-    
     @apply tw-grid tw-grid-cols-2;
+  }
+
+  .right {
+    padding-left: 20px;
   }
 }
 @screen 2xl {

@@ -1,7 +1,7 @@
 <template>
-  <article class="tw-pb-16 md:tw-pb-10 tw-border-b tw-border-dark-line tw-border-opacity-15 tw-cursor-pointer lg:hover:tw-opacity-70" role="link">
-    <div class="tw-text-gray tw-mb-4">{{ prettyDate }}</div>
-    <h2 class="tw-text-md tw-text-secondary">{{ name }}</h2>
+  <article class="tw-pb-16 md:tw-pb-10 tw-border-b tw-border-third tw-border-opacity-15 tw-cursor-pointer lg:hover:tw-opacity-70" role="link">
+    <div class="tw-text-secondary tw-mb-4">{{ prettyDate }}</div>
+    <h2 class="tw-text-[20px] tw-text-white">{{ name }}</h2>
   </article>
 </template>
 

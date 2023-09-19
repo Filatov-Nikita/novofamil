@@ -1,5 +1,5 @@
 <template>
-  <div class="dialog-full callback tw-z-[910] tw-bg-primary dialog-news tw-overflow-x-hidden" v-if="showedId.value">
+  <div class="dialog-full callback tw-z-[910] bg-main dialog-news tw-overflow-x-hidden" v-if="showedId.value">
     <Header />
     <div class="wrapper tw-w-full tw-pt-20 page-pb">
       <div class="tw-pt-48 tw-relative">
