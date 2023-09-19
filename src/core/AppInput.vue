@@ -3,7 +3,7 @@
     <div class="tw-border-b tw-h-[50px] tw-relative tw-flex"
       :class="{
         'tw-border-orange': focused && !errorMessage,
-        ' tw-border-base-500': !focused && !errorMessage && light,
+        'tw-border-base-500': !focused && !errorMessage && light,
         'tw-border-secondary': !focused && !errorMessage && !light,
         'tw-border-negative': errorMessage
       }"
@@ -11,7 +11,7 @@
       <div class="tw-flex-grow tw-relative">
         <input
           class="tw-block tw-w-full tw-h-full full input"
-          :class="{ 'tw-text-white': !light, 'tw-text-gray': light }"
+          :class="{ 'tw-text-white': !light, 'tw-text-third': light }"
           :type="type"
           :id="$.uid"
           v-model="value"
@@ -142,7 +142,7 @@ export default {
     bottom: 0px;
     left: 0;
     right: 0;
-    color: theme('colors.gray');
+    color: theme('colors.secondary');
   }
 
   .errorMessage, .caption {

@@ -6,7 +6,9 @@
       disable: disabled,
       'tw-bg-third hover:tw-bg-opacity-80': theme === 'gray',
       'tw-bg-orange hover:tw-bg-orangeHover': theme === 'orange',
-    }">
+    }"
+    :disabled="disabled"
+  >
     <slot />
   </component>
 </template>
@@ -32,6 +34,6 @@ export default {
 
 <style scoped lang="scss">
 .disable {
-  @apply tw-text-gray tw-bg-dark-line/15;
+  @apply tw-text-white tw-bg-third tw-opacity-50;
 }
 </style>

@@ -5,7 +5,7 @@
         Ипотечный калькулятор
       </h1>
 
-      <form class="tw-mb-30 lg:tw-flex" @submit="submit">
+      <form class="tw-mb-30 lg:tw-flex tw-items-end" @submit="submit">
         <div
           class="md:tw-flex md:tw-flex-wrap md:-tw-ml-30 md:-tw-mt-10 md:tw-basis-full">
           <AppInput
@@ -30,7 +30,7 @@
                   :iconClass="
                     showedCaption
                       ? 'tw-stroke-orange tw-fill-orange'
-                      : 'tw-stroke-blue tw-fill-blue'
+                      : 'tw-stroke-white tw-fill-white'
                   " />
               </button>
             </template>
@@ -76,11 +76,11 @@
           Отправить заявку
         </AppButton>
       </form>
-      <p class="tw-text-gray tw-mb-40 md:tw-mb-80">{{ caption }}</p>
+      <p class="tw-text-third tw-mb-40 md:tw-mb-80">{{ caption }}</p>
       <section>
         <div
           class="tw-inline-flex tw-items-center tw-mb-30 md:tw-mb-20 tw-relative">
-          <h2 class="tw-text-lg tw-text-secondary tw-leading-100 tw-font-arial">
+          <h2 class="tw-text-lg tw-text-white tw-font-nord tw-leading-100 tw-uppercase">
             Банки-партнёры
           </h2>
           <button
@@ -90,7 +90,7 @@
             <AppIcon
               name="attention"
               size="18px"
-              iconClass="tw-stroke-blue tw-fill-blue tw-transform -tw-translate-y-1/2" />
+              iconClass="tw-stroke-white tw-fill-white tw-transform -tw-translate-y-1/2" />
           </button>
           <div
             v-if="bankPopup"
