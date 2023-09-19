@@ -82,7 +82,7 @@ export default {
       slides: [
         {
           text: 'Новый формат комфорта в Зеленой роще',
-          image: require('@/assets/images/main/home.jpeg'),
+          image: require('@/assets/images/main/home.jpg'),
         },
       ]
     }
