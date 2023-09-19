@@ -1,16 +1,16 @@
 <template>
   <app-page class="2xl:tw-pt-[70px]">
     <div class="wrapper tw-relative contacts">
-      <h1 class="tw-text-lg tw-font-stolz tw-font-normal contacts-a">
+      <h1 class="tw-text-lg tw-font-nord tw-text-white tw-uppercase contacts-a">
         Контакты
       </h1>
       <div class="tw-font-arial tw-mb-20 2xl:tw-mb-0 contacts-b">
         <p
           v-if="address"
-          class="tw-text-secondary tw-leading-120 tw-text-md tw-mb-20 2xl:tw-text-lg md:tw-max-w-[600px]" v-html="address"
+          class="tw-text-white tw-uppercase tw-font-nord tw-leading-120 tw-text-md tw-mb-20 2xl:tw-text-lg md:tw-max-w-[600px]" v-html="address"
         >
         </p>
-        <div class="tw-text-gray md:tw-flex md:-tw-mx-20">
+        <div class="tw-text-third md:tw-flex md:-tw-mx-20">
           <div class="md:tw-px-20">
             <a
               class="tw-block"
@@ -26,22 +26,8 @@
           <div class="md:tw-px-20" v-html="worktime"></div>
         </div>
       </div>
-      <div
-        class="tw-rounded-3xl tw-overflow-hidden tw-h-[276px] md:tw-h-[407px] xl:tw-h-auto contacts-c 2xl:tw-w-full">
-        <yandex-map
-          v-if="coords && address"
-          class="tw-mix-blend-luminosity tw-relative tw-z-10 tw-h-full tw-w-full"
-          :coords="coords"
-          :zoom="17"
-          :controls="[]">
-          <ymap-marker
-            marker-id="place"
-            :coords="coords"
-            :hint-content="`офис - ${address}`" />
-        </yandex-map>
-      </div>
-      <FormCallBack class="tw-rounded-3xl -tw-mx-16 md:tw-mx-0 contacts-d" />
     </div>
+    <FormCallBack />
   </app-page>
 </template>
 
