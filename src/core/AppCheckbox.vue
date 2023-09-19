@@ -11,7 +11,7 @@
             <use xlink:href="/sprite.svg#romb"></use>
           </svg>
         </div>
-        <div class="tw-leading-100 tw-ml-10" role="label">
+        <div class="tw-leading-100 tw-ml-10 tw-text-white" role="label">
           <slot />
         </div>
       </div>

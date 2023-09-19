@@ -1,15 +1,9 @@
 <template>
   <div
-    class="dialog-full callback tw-z-[910] tw-bg-white"
+    class="dialog-full callback tw-z-[910] bg-main"
     v-if="$store.state.dialogCallbackShowed">
     <Header />
-    <FormCallBack class="tw-flex tw-w-full tw-justify-center tw-items-center r-none">
-      <button
-        class="tw-absolute tw-right-30 tw-top-20"
-        @click="$store.commit('callbackToggle')">
-        <AppIcon name="close" size="36px" fill="gray" />
-      </button>
-    </FormCallBack>
+    <FormCallBack pageView class="tw-h-full" @close="$store.commit('callbackToggle')"></FormCallBack>
   </div>
 </template>
 
