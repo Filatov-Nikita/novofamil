@@ -1,15 +1,10 @@
 <template>
-  <div class="dialog-full callback tw-z-[890] tw-bg-white" v-if="modelValue">
+  <div class="dialog-full callback tw-z-[890] bg-main" v-if="modelValue">
     <Header />
     <FormCreditOrder
-      class="tw-flex tw-w-full tw-items-center tw-justify-center"
-      v-bind="{ creditSum }">
-       <button
-          class="tw-absolute tw-right-30 tw-top-20"
-          @click="$emit('update:modelValue', false)"
-        >
-        <AppIcon name="close" size="36px" fill="gray" />
-      </button>
+      v-bind="{ creditSum }"
+      @close="$emit('update:modelValue', false)"
+    >
     </FormCreditOrder>
   </div>
 </template>
