@@ -2,10 +2,10 @@
   <app-page class="tw-pt-0 2xl:tw-pb-0 tw-relative">
     <div class="wrapper tw-h-full">
       <div class="grid tw-h-full">
-        <div class=" xl:tw-border-r xl:tw-border-r-base-500 tw-pt-32 xl:tw-pr-[78px]">
+        <div class=" xl:tw-border-r xl:tw-border-r-base-500 tw-pt-32 tw-pb-32 xl:tw-pr-[78px]">
 
           <h1 class="h1 tw-mb-20">Ход <br class="md:tw-hidden" /> строительства</h1>
-  
+
           <div class="tw-flex tw-flex-wrap tw-space-x-10 tw-mb-20 md:tw-mb-30">
             <button
               class="tab"
@@ -25,7 +25,7 @@
               @click="grid['2xl'] ? show2xl(item.images) : show(item.images)"
             />
           </div>
-  
+
           <div class="2xl:tw-pb-40">
             <AppButton class="tw-w-full  md:tw-max-w-[200px] xl:tw-max-w-full tw-block" tag="span" @click="showedView = true">
               Онлайн-трансляция
@@ -34,7 +34,7 @@
         </div>
 
         <div v-if="$grid['2xl']" class="xl:tw-pt-32 xl:tw-pl-48">
-          
+
           <div  class="tw-relative overlay tw-overflow-x-hidden app-scroll-y tw-pr-12 ">
             <div class="tw-flex tw-flex-wrap -tw-mx-10 -tw-mt-20">
               <div
@@ -43,7 +43,7 @@
                 :key="image"
                 @click="show(showed2xlGallery, index)"
               >
-                <img class="tw-rounded-lg" :src="image" alt="фото из галлереи" />
+                <img :src="image" alt="фото из галлереи" />
               </div>
             </div>
           </div>
@@ -69,7 +69,7 @@
           >
             <AppIcon name="close" size="36px" fill="white" />
           </button>
-          <iframe src="https://ucams.ufanet.ru/api/internal/embed/001-72317491ST-2/?ttl=3600&autoplay=true&mute=true" width="100%" height="500" frameborder="0"></iframe>
+          <iframe src="https://ucams.ufanet.ru/api/internal/embed/1484903718/?ttl=3600&autoplay=true&mute=true" width="100%" height="500" frameborder="0"></iframe>
           <!-- <img v-if="hasView" class="tw-w-auto tw-max-h-full" :src="images.view" alt="вид из окна" /> -->
         </template>
       </GDialog>
@@ -166,14 +166,15 @@ export default {
 .tab {
   flex-basis: 66px;
   padding: 5px 16px;
-  background: theme('colors.gray');
+  background: theme('colors.secondary');
   color: theme('colors.white');
-  border-radius: 8px;
+  border-radius: 16px;
   text-align: center;
 }
 
 .tab--active {
-  background: theme('colors.secondary');
+  background: theme('colors.white');
+  color: theme('colors.secondary');
 }
 
 .gallery-dialog {
@@ -203,7 +204,6 @@ export default {
 
 @screen xl {
   .grid {
-    
     @apply tw-grid tw-grid-cols-2;
   }
 
