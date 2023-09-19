@@ -41,6 +41,7 @@
         свяжутся с&nbsp;вами в&nbsp;ближайшее время
       </p>
       <button
+        v-if="pageView"
         class="tw-w-48 tw-h-48 tw-absolute tw-right-16 -tw-top-[50px] lg:tw-right-[64px] lg:tw-top-0 2xl:tw-right-[100px]"
         @click="$emit('close')"
       >

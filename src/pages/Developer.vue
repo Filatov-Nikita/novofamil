@@ -5,27 +5,27 @@
         <h1 class="h1 tw-max-w-[288px] tw-normal-case tw-mb-20 md:tw-max-w-[700px] xl:tw-col-span-1 xl:tw-mb-30 header">
           Застройщик <br class="tw-hidden md:tw-block" /> «Агидель-ИнвестСтрой»
         </h1>
-        <p class="title tw-text-secondary tw-text-md tw-leading-120 tw-mb-20 tw-max-w-[343px] md:tw-max-w-[700px] md:tw-text-[31px] md:tw-font-extrabold">
+        <p class="title tw-text-white tw-uppercase tw-font-nord tw-text-md tw-leading-120 tw-mb-20 tw-max-w-[343px] md:tw-max-w-[700px] md:tw-text-[31px] md:tw-font-extrabold">
           Cпециализированный застройщик «Агидель-ИнвестСтрой» — застройщик, которому доверяют
         </p>
-        <div class="tw-space-y-20 tw-mb-30 tw-text-gray content" v-html="content"></div>
+        <div class="tw-space-y-20 tw-mb-30 tw-text-third content" v-html="content"></div>
         <div class="features">
           <div class="tw-flex tw-flex-wrap -tw-ml-40 tw-mb-30 -tw-mt-20 xl:tw-mb-[50px] 2xl:tw-mb-30">
             <div class="tw-pt-20 tw-pl-40 tw-w-1/2 md:tw-w-auto md:tw-basis-[150px]">
-              <p class="tw-text-lg tw-leading-100 tw-mb-10 tw-text-secondary tw-font-stolz md:tw-text-xl10 xl:tw-text-xl 2xl:tw-text-xl10">20+</p>
-              <p class="tw-leading-120 tw-text-gray">лет на рынке <br/> недвижимости</p>
+              <p class="tw-text-lg tw-leading-100 tw-mb-10 tw-text-white tw-uppercase tw-font-nord md:tw-text-xl10 xl:tw-text-xl 2xl:tw-text-xl10">20+</p>
+              <p class="tw-leading-120 tw-text-third">лет на рынке <br/> недвижимости</p>
             </div>
             <div class="tw-pt-20 tw-pl-40 tw-w-1/2 md:tw-w-auto md:tw-basis-[150px]">
-              <p class="tw-text-lg tw-leading-100 tw-mb-10 tw-text-secondary tw-font-stolz md:tw-text-xl10 xl:tw-text-xl 2xl:tw-text-xl10">22</p>
-              <p class="tw-leading-120 tw-text-gray">реализованных <br/> домов</p>
+              <p class="tw-text-lg tw-leading-100 tw-mb-10 tw-text-white tw-uppercase tw-font-nord md:tw-text-xl10 xl:tw-text-xl 2xl:tw-text-xl10">22</p>
+              <p class="tw-leading-120 tw-text-third">реализованных <br/> домов</p>
             </div>
             <div class="tw-pt-20 tw-pl-40 tw-w-1/2 md:tw-w-auto md:tw-basis-[150px]">
-              <p class="tw-text-lg tw-leading-100 tw-mb-10 tw-text-secondary tw-font-stolz md:tw-text-xl10 xl:tw-text-xl 2xl:tw-text-xl10">14</p>
-              <p class="tw-leading-120 tw-text-gray">домов сданы <br/> раньше срока</p>
+              <p class="tw-text-lg tw-leading-100 tw-mb-10 tw-text-white tw-uppercase tw-font-nord md:tw-text-xl10 xl:tw-text-xl 2xl:tw-text-xl10">14</p>
+              <p class="tw-leading-120 tw-text-third">домов сданы <br/> раньше срока</p>
             </div>
             <div class="tw-pt-20 tw-pl-40 tw-w-1/2 md:tw-w-auto">
-              <p class="tw-text-lg tw-leading-100 tw-mb-10 tw-text-secondary tw-font-stolz md:tw-text-xl10 xl:tw-text-xl 2xl:tw-text-xl10">3 280</p>
-              <p class="tw-leading-120 tw-text-gray">квартир</p>
+              <p class="tw-text-lg tw-leading-100 tw-mb-10 tw-text-white tw-uppercase tw-font-nord md:tw-text-xl10 xl:tw-text-xl 2xl:tw-text-xl10">3 280</p>
+              <p class="tw-leading-120 tw-text-third">квартир</p>
             </div>
           </div>
           <!-- <div>
