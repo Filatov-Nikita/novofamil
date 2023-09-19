@@ -56,23 +56,23 @@
           <div class="map-flat">
             <div class="tw-w-full tw-flex tw-justify-center lg:tw-justify-end tw-p-16">
               <div
-                class="tw-flex tw-rounded-2xl tw-border tw-border-solid tw-border-secondary tw-border-opacity-60 tw-overflow-hidden tw-w-fit tw-divide-x tw-divide-white/40 tw-text-sm">
+                class="tw-flex tw-rounded-2xl tw-border tw-border-solid tw-border-secondary tw-border-opacity-60 tw-overflow-hidden tw-w-fit tw-divide-x tw-divide-third tw-text-sm">
                 <button
-                  class="tw-text-white tw-py-15 md:tw-px-28 tw-px-20"
+                  class="tw-py-15 md:tw-px-28 tw-px-20"
                   :class="[visibleImage === 2 ? ' tw-bg-secondary tw-text-white' : 'tw-bg-white tw-text-third']"
                   @click="visibleImage = 2">
                   С мебелью
                 </button>
                 <button
                   v-if="flat.images[1]"
-                  class="tw-text-white tw-py-15 md:tw-px-28 tw-px-15"
+                  class="tw-py-15 md:tw-px-28 tw-px-15"
                   :class="[visibleImage === 1 ? ' tw-bg-secondary tw-text-white' : 'tw-bg-white tw-text-third']"
                   @click="visibleImage = 1">
                   Без мебели
                 </button>
                 <button
                   v-if="flat.images[3]"
-                  class="tw-text-white tw-py-15 md:tw-px-28 tw-px-15"
+                  class="tw-py-15 md:tw-px-28 tw-px-15"
                   :class="[visibleImage === 3 ? ' tw-bg-secondary tw-text-white' : 'tw-bg-white tw-text-third']"
                   @click="visibleImage = 3">
                   ЗD
