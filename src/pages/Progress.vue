@@ -1,45 +1,50 @@
 <template>
-  <app-page class="tw-pb-40 2xl:tw-pb-0 tw-relative">
-    <div class="wrapper">
-      <div class="grid">
-        <h1 class="h1 tw-mb-20">Ход <br class="md:tw-hidden" /> строительства</h1>
+  <app-page class="tw-pt-0 2xl:tw-pb-0 tw-relative">
+    <div class="wrapper tw-h-full">
+      <div class="grid tw-h-full">
+        <div class=" xl:tw-border-r xl:tw-border-r-base-500 tw-pt-32 xl:tw-pr-[78px]">
 
-        <div class="tw-flex tw-flex-wrap tw-space-x-10 tw-mb-20 md:tw-mb-30">
-          <button
-            class="tab"
-            :class="{ 'tab--active': curTab.id === tab.id }"
-            v-for="tab in tabs"
-            :key="tab.id"
-            @click="curTab = tab"
-          >
-            {{ tab.name }}
-          </button>
-        </div>
-
-        <div class="tw-flex tw-flex-wrap -tw-ml-10 -tw-mt-10 tw-mb-30 items app-scroll-y">
-          <ProgressItem
-            v-for="item in items" :key="item.id"
-            class="tw-w-1/2 tw-pl-10 tw-pt-10 md:tw-w-1/3"
-            v-bind="item"
-            @click="grid['2xl'] ? show2xl(item.images) : show(item.images)"
-          />
-        </div>
-
-        <div class="2xl:tw-pb-40">
-          <AppButton class="tw-w-full  md:tw-max-w-[200px] tw-block" tag="span" @click="showedView = true">
-            Онлайн-трансляция
-          </AppButton>
-        </div>
-
-        <div v-if="$grid['2xl']" class="tw-relative overlay tw-overflow-x-hidden app-scroll-y">
-          <div class="tw-flex tw-flex-wrap -tw-mx-10 -tw-mt-20">
-            <div
-              class="tw-w-1/2 tw-px-10 tw-pt-20 tw-cursor-pointer"
-              v-for="(image, index) in showed2xlGallery"
-              :key="image"
-              @click="show(showed2xlGallery, index)"
+          <h1 class="h1 tw-mb-20">Ход <br class="md:tw-hidden" /> строительства</h1>
+  
+          <div class="tw-flex tw-flex-wrap tw-space-x-10 tw-mb-20 md:tw-mb-30">
+            <button
+              class="tab"
+              :class="{ 'tab--active': curTab.id === tab.id }"
+              v-for="tab in tabs"
+              :key="tab.id"
+              @click="curTab = tab"
             >
-              <img class="tw-rounded-lg" :src="image" alt="фото из галлереи" />
+              {{ tab.name }}
+            </button>
+          </div>
+          <div class="tw-flex tw-flex-wrap -tw-ml-10 -tw-mt-10 tw-mb-30 items app-scroll-y">
+            <ProgressItem
+              v-for="item in items" :key="item.id"
+              class="tw-w-1/2 tw-pl-10 tw-pt-10 md:tw-w-1/3"
+              v-bind="item"
+              @click="grid['2xl'] ? show2xl(item.images) : show(item.images)"
+            />
+          </div>
+  
+          <div class="2xl:tw-pb-40">
+            <AppButton class="tw-w-full  md:tw-max-w-[200px] xl:tw-max-w-full tw-block" tag="span" @click="showedView = true">
+              Онлайн-трансляция
+            </AppButton>
+          </div>
+        </div>
+
+        <div v-if="$grid['2xl']" class="xl:tw-pt-32 xl:tw-pl-48">
+          
+          <div  class="tw-relative overlay tw-overflow-x-hidden app-scroll-y tw-pr-12 ">
+            <div class="tw-flex tw-flex-wrap -tw-mx-10 -tw-mt-20">
+              <div
+                class="tw-w-1/2 tw-px-10 tw-pt-20 tw-cursor-pointer"
+                v-for="(image, index) in showed2xlGallery"
+                :key="image"
+                @click="show(showed2xlGallery, index)"
+              >
+                <img class="tw-rounded-lg" :src="image" alt="фото из галлереи" />
+              </div>
             </div>
           </div>
         </div>
@@ -198,15 +203,18 @@ export default {
 
 @screen xl {
   .grid {
-    display: grid;
-    grid-template-columns: 700px 1fr;
+    
+    @apply tw-grid tw-grid-cols-2;
   }
 
   .items {
     height: calc(100vh - 410px);
   }
 
-  .grid:first-child {
+  .overlay {
+    height: calc(100vh - 192px);
+  }
+  /* .grid:first-child {
     grid-row: 1 / 2;
   }
 
@@ -222,19 +230,19 @@ export default {
     grid-row: 1 / 4;
     padding-left: 78px;
     align-self: center;
-  }
+  } */
 }
 
 @screen 2xl {
   .grid {
-    grid-template-columns: 50% 50%;
+    @apply  tw-grid-cols-[minmax(0px,_795px)_1fr]
   }
 
   .items {
     height: calc(100vh - 484px);
   }
 
-  .grid:first-child {
+  /* .grid:first-child {
     grid-row: 1 / 2;
   }
 
@@ -258,7 +266,7 @@ export default {
     padding-left: 78px;
     padding-right: 10px;
     height: calc(100vh - 192px);
-  }
+  } */
 
   .grid > *:nth-child(5) > div {
     /* height: calc(100vh - 192px); */

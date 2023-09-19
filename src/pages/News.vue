@@ -1,9 +1,10 @@
 <template>
   <app-page class="tw-pt-0">
     <div class="wrapper tw-h-full">
-      <div class="2xl:tw-h-full news">
-        <div class="left app-scroll-y tw-pt-20">
-          <h1 class="h1 tw-mb-20">Новости и акции</h1>
+      <div class=" grid tw-h-full">
+        
+        <div class="left app-scroll-y xl:tw-border-r xl:tw-border-r-base-500 tw-pt-32 xl:tw-pr-[78px]">
+          <h1 class="h1 tw-mb-24">Новости и акции</h1>
           <NewsList v-if="items" :items="items" />
           <div
             class="tw-text-center tw-pt-20"
@@ -12,7 +13,7 @@
             <Spinner class="tw-mx-auto" />
           </div>
         </div>
-        <div v-if="$grid['2xl']" class="right app-scroll-y tw-pt-20 tw-relative">
+        <div v-if="$grid['xl']" class="right app-scroll-y tw-pt-20 tw-relative">
           <NewsShow
             v-if="detailed"
             :id="showedId.value"
@@ -22,7 +23,10 @@
             <Spinner size="120px" />
           </div>
         </div>
-        <DialogNewsShow v-if="!$grid['2xl']" :content="detailed" />
+        
+      </div>
+      <div class="2xl:tw-h-full news">
+        <DialogNewsShow v-if="!$grid['xl']" :content="detailed" />
       </div>
     </div>
   </app-page>
@@ -109,11 +113,21 @@ export default {
 </script>
 
 <style scoped>
+@screen lg {
+  .grid {
+    
+    @apply tw-grid tw-grid-cols-2;
+  }
+}
 @screen 2xl {
   .news {
     width: 100%;
     display: grid;
     grid-template-columns: 50% 50%;
+  }
+
+  .grid {
+    @apply  tw-grid-cols-[minmax(0px,_795px)_1fr]
   }
 
   .left, .right {

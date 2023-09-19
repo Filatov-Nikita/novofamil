@@ -1,26 +1,27 @@
 <template>
-  <app-page class="xl-separator tw-relative page-pb">
-    <div class="wrapper">
-      <h1 class="h1 tw-mb-20 md:tw-mb-30 2xl:tw-mb-40">Условия покупки</h1>
+  <app-page class="xl-separator tw-relative tw-pt-0 ">
+    <div class="wrapper tw-h-full">
+      <div class=" grid xl:tw-h-full">
+        <div class=" tw-overflow-hidden xl:tw-border-r xl:tw-border-r-base-500 tw-pt-32 xl:tw-pr-[78px] xl:tw-pt-[84px] 2xl:tw-pt-[100px]">
+          <h1 class="h1 tw-mb-20 md:tw-mb-30 2xl:tw-mb-40">Условия покупки</h1>
+          
+            <div
+              class="tw-flex tw-pb-20 tw-overflow-x-auto tw-mb-30 md:tw-mb-10 app-scroll-x xl:tw-flex-wrap xl:tw-max-w-[460px] xl:-tw-mx-10 xl:-tw-mt-10"
+            >
+              <TabsItem
+                class="tw-shrink-0 tw-mr-20 last:tw-mr-0 xl:tw-mx-10 xl:tw-mt-10"
+                v-for="(tab, key) in tabs"
+                :key="tab.label"
+                :class="[ tab.class ]"
+                :active="tabValue === key"
+                v-bind="tab"
+                @click="tabValue = tab.icon"
+              />
+            </div>
+          
 
-      <div class="2xl:tw-flex tw-items-start">
-        <div class="2xl:tw-w-1/2 2xl:tw-pr-[78px]">
-          <div
-            class="tw-flex tw-pb-20 tw-overflow-x-auto tw-mb-30 md:tw-mb-10 app-scroll-x 2xl:tw-flex-wrap 2xl:tw-max-w-[460px] 2xl:-tw-mx-10 2xl:-tw-mt-10"
-          >
-            <TabsItem
-              class="tw-shrink-0 tw-mr-20 last:tw-mr-0 2xl:tw-mx-10 2xl:tw-mt-10"
-              v-for="(tab, key) in tabs"
-              :key="tab.label"
-              :class="[ tab.class ]"
-              :active="tabValue === key"
-              v-bind="tab"
-              @click="tabValue = tab.icon"
-            />
-          </div>
         </div>
-
-        <TabsContent v-model="tabValue" class="md:tw-max-w-[680px] lg:tw-max-w-[900px] 2xl:tw-w-1/2">
+        <TabsContent v-model="tabValue" class=" xl:tw-justify-self-center  xl:tw-pt-[84px] 2xl:tw-pt-[100px] ">
           <TabsContentItem
             v-for="(section, key) in content"
             :key="key"
@@ -218,3 +219,9 @@ export default {
   },
 };
 </script>
+<style scoped lang="scss">
+
+.grid {
+    @apply tw-grid xl:tw-grid-cols-2 2xl:tw-grid-cols-[minmax(0px,_795px)_1fr]
+  }
+</style>

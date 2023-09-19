@@ -99,7 +99,7 @@
           </div>
         </div>
         <div
-          class="tw-flex tw-flex-wrap -tw-mt-16 -tw-ml-10 md:-tw-mt-20 lg:tw-max-w-[800px] 2xl:tw-max-w-full">
+          class="tw-flex  -tw-mt-16 -tw-ml-10 md:-tw-mt-20  2xl:tw-max-w-full">
           <div
             class="tw-w-1/2 tw-pl-10 tw-pt-16 md:tw-w-1/3 md:tw-mt-20 2xl:tw-w-auto"
             v-for="item in partners"

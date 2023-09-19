@@ -1,6 +1,6 @@
 <template>
   <article class="tw-flex tw-flex-wrap tw-cursor-pointer">
-    <div class="tw-w-full tw-mb-10 tw-h-[95px] md:tw-max-w-[60px] md:tw-h-[40px] md:tw-mb-0">
+    <div class="tw-w-full tw-mb-10 tw-h-[95px] md:tw-max-w-[60px] md:tw-h-[40px] xl:tw-max-w-[76px] xl:tw-h-[50px] md:tw-mb-0">
       <img width="1" height="95" class="tw-h-full tw-w-full tw-object-cover tw-rounded" :src="picSrc" :alt="title" />
     </div>
     <div class="tw-w-full md:tw-max-w-[100px] md:tw-ml-14">
