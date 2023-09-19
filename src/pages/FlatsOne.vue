@@ -5,22 +5,22 @@
         <div class="first">
           <div>
             <a
-              class="tw-underline tw-text-gray tw-block tw-mb-30"
+              class="tw-underline tw-text-white tw-block tw-mb-30"
               href="javascript:void(0)"
               @click.prevent="$router.back()">
               Назад к этажу
             </a>
             <div
-              class="md:tw-flex md:tw-justify-between md:tw-items-start lg:tw-block 2xl:tw-grid 2xl:tw-justify-center">
-              <div class="tw-mb-20 lg:tw-mb-30">
+              class="md:tw-flex md:tw-justify-between md:tw-items-start lg:tw-block">
+              <div class="tw-mb-20 lg:tw-mb-30 2xl:tw-flex 2xl:tw-flex-wrap 2xl:tw-w-full">
                 <div
-                  class="tw-flex tw-justify-between lg:tw-justify-start md:tw-gap-40 2xl:tw-flex-col 2xl:tw-gap-0 tw-mb-10">
-                  <div class="tw-font-stolz tw-text-lg">№{{ flat.number }}</div>
-                  <div class="tw-font-stolz tw-text-lg tw-text-gray">
+                  class="tw-mb-10 2xl:tw-flex 2xl:tw-gap-x-[96px]">
+                  <div class="tw-font-nord tw-uppercase tw-text-white tw-text-[32px]">№{{ flat.number }}</div>
+                  <div class="tw-font-nord tw-uppercase tw-text-[32px] tw-text-secondary">
                     {{ flat.total_area }} <span>м<sup>2</sup></span>
                   </div>
                 </div>
-                <p class="tw-w-full tw-text-sm">
+                <p class="tw-w-full tw-text-sm tw-text-third 2xl:tw-w-full">
                   Секция {{ flat.entrance }} • {{ flat.storey_number }} этаж •
                   {{ flat.rooms_number }} комнаты
                 </p>
@@ -28,30 +28,11 @@
 
               <div
                 class="tw-hidden md:tw-flex lg:tw-hidden tw-justify-between tw-items-center tw-gap-30">
-                <svg
-                  width="76"
-                  height="50"
-                  viewBox="0 0 76 50"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M42.3241 42.3241C32.7563 51.892 17.2437 51.892 7.67588 42.3241C-1.89196 32.7563 -1.89196 17.2437 7.67588 7.67588C17.2437 -1.89196 32.7563 -1.89196 42.3241 7.67588C51.892 17.2437 51.892 32.7563 42.3241 42.3241Z"
-                    stroke="#9BA5B0" />
-                  <path
-                    d="M37.5473 24.3859C30.6384 21.936 16.7614 16.9748 16.5245 16.7298L14.1557 16.1173L22.4464 24.6922L15.044 33.5733L36.659 25.3047L37.5473 24.3859Z"
-                    fill="#9BA5B0" />
-                  <path
-                    d="M13.23 34.7602C13.0827 34.6079 13 34.4014 13 34.186C13 33.9706 13.0827 33.7641 13.23 33.6118L21.5577 24.9987L13.23 16.3855C13.1039 16.2548 13.0246 16.0834 13.0053 15.8998C12.986 15.7162 13.0278 15.5313 13.1238 15.3755C13.2198 15.2198 13.3642 15.1026 13.5333 15.0432C13.7024 14.9837 13.886 14.9857 14.0539 15.0488L38.4817 24.2361C38.6336 24.2929 38.7648 24.3966 38.8575 24.5333C38.9502 24.6699 39 24.8328 39 24.9998C39 25.1668 38.9502 25.3297 38.8575 25.4663C38.7648 25.603 38.6336 25.7067 38.4817 25.7635L14.0539 34.9508C13.9134 35.0038 13.7613 35.0142 13.6154 34.9809C13.4694 34.9475 13.3357 34.8717 13.23 34.7625L13.23 34.7602ZM16.8431 17.8256L23.2232 24.4244C23.3704 24.5767 23.4532 24.7833 23.4532 24.9987C23.4532 25.214 23.3704 25.4206 23.2232 25.5729L16.8431 32.1717L35.9157 24.9975L16.8431 17.8233V17.8256Z"
-                    fill="#9BA5B0" />
-                  <circle
-                    cx="66"
-                    cy="25"
-                    r="9.5"
-                    fill="#C5EAFF"
-                    stroke="#C5EAFF" />
-                  <path
-                    d="M66.5179 28.1324C65.8859 28.1324 65.3299 28.0044 64.8499 27.7484C64.3699 27.4924 63.9979 27.1324 63.7339 26.6684C63.4779 26.1964 63.3499 25.6524 63.3499 25.0364C63.3499 24.4284 63.4819 23.8924 63.7459 23.4284C64.0099 22.9564 64.3779 22.5924 64.8499 22.3364C65.3299 22.0724 65.8819 21.9404 66.5059 21.9404C67.3699 21.9404 68.1179 22.2444 68.7499 22.8524L67.9339 23.7284C67.7579 23.5524 67.5459 23.4164 67.2979 23.3204C67.0499 23.2164 66.7939 23.1644 66.5299 23.1644C65.9859 23.1644 65.5419 23.3404 65.1979 23.6924C64.8619 24.0364 64.6939 24.4844 64.6939 25.0364C64.6939 25.5964 64.8619 26.0484 65.1979 26.3924C65.5419 26.7364 65.9859 26.9084 66.5299 26.9084C66.8179 26.9084 67.0899 26.8564 67.3459 26.7524C67.6019 26.6484 67.8179 26.4964 67.9939 26.2964L68.8219 27.1964C68.4939 27.5164 68.1419 27.7524 67.7659 27.9044C67.3899 28.0564 66.9739 28.1324 66.5179 28.1324Z"
-                    fill="#2F4258" />
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M63.5 39C63.5 52.531 52.531 63.5 39 63.5C25.469 63.5 14.5 52.531 14.5 39C14.5 25.469 25.469 14.5 39 14.5C52.531 14.5 63.5 25.469 63.5 39Z" stroke="#D6DEDF"/>
+                  <path d="M51.9983 39.3963C51.9948 39.605 51.9085 39.8066 51.7584 39.9567C51.6083 40.1067 51.4068 40.193 51.1981 40.1966L39.3934 40.3955L39.1945 52.2006C39.1912 52.3796 39.1271 52.5542 39.0126 52.6956C38.8981 52.837 38.7401 52.9368 38.5647 52.9784C38.3893 53.0201 38.2069 53.0011 38.0477 52.9247C37.8885 52.8482 37.7619 52.7189 37.6889 52.558L27.069 29.1333C27.0027 28.988 26.9836 28.8242 27.0142 28.6644C27.0448 28.5045 27.1236 28.3563 27.24 28.24C27.3563 28.1237 27.5045 28.0448 27.6644 28.0142C27.8242 27.9836 27.9879 28.0027 28.1333 28.069L51.557 38.6893C51.6918 38.7502 51.8051 38.849 51.8835 38.9739C51.962 39.0989 52.0023 39.2449 51.9999 39.3947L51.9983 39.3963Z" fill="#D6DEDF"/>
+                  <path d="M16.7175 3.28249C20.4275 6.99247 20.4275 13.0075 16.7175 16.7175C13.0075 20.4275 6.99247 20.4275 3.28249 16.7175C-0.427495 13.0075 -0.427494 6.99246 3.28249 3.28248C6.99247 -0.427496 13.0075 -0.427495 16.7175 3.28249Z" fill="#FA864B" stroke="#FA864B"/>
+                  <path d="M10.4678 13.0113C9.8358 13.0113 9.2798 12.8833 8.7998 12.6273C8.3198 12.3713 7.9478 12.0113 7.6838 11.5473C7.4278 11.0753 7.2998 10.5313 7.2998 9.91534C7.2998 9.30734 7.4318 8.77134 7.6958 8.30734C7.9598 7.83534 8.3278 7.47134 8.7998 7.21534C9.2798 6.95134 9.8318 6.81934 10.4558 6.81934C11.3198 6.81934 12.0678 7.12334 12.6998 7.73134L11.8838 8.60734C11.7078 8.43134 11.4958 8.29534 11.2478 8.19934C10.9998 8.09534 10.7438 8.04334 10.4798 8.04334C9.9358 8.04334 9.4918 8.21934 9.1478 8.57134C8.8118 8.91534 8.6438 9.36334 8.6438 9.91534C8.6438 10.4753 8.8118 10.9273 9.1478 11.2713C9.4918 11.6153 9.9358 11.7873 10.4798 11.7873C10.7678 11.7873 11.0398 11.7353 11.2958 11.6313C11.5518 11.5273 11.7678 11.3753 11.9438 11.1753L12.7718 12.0753C12.4438 12.3953 12.0918 12.6313 11.7158 12.7833C11.3398 12.9353 10.9238 13.0113 10.4678 13.0113Z" fill="white"/>
                 </svg>
 
                 <div class="tw-basis-[124px]">
@@ -61,12 +42,6 @@
                     :src="flat.images[0]"
                     alt="срез этажа" />
                 </div>
-              </div>
-
-              <div class="tw-hidden lg:tw-block tw-mb-40">
-                <AppButton class="" @click="showedBook = true">
-                  Заявка на бронь
-                </AppButton>
               </div>
             </div>
           </div>
@@ -79,26 +54,26 @@
             :src="flat.video_clip"
             allowfullscreen /> -->
           <div class="map-flat">
-            <div class="lg:tw-w-full lg:tw-flex lg:tw-justify-end">
+            <div class="tw-w-full tw-flex tw-justify-center lg:tw-justify-end tw-p-16">
               <div
-                class="tw-flex tw-rounded-md tw-overflow-hidden tw-w-fit tw-divide-x tw-divide-white/40 tw-text-sm">
+                class="tw-flex tw-rounded-2xl tw-border tw-border-solid tw-border-secondary tw-border-opacity-60 tw-overflow-hidden tw-w-fit tw-divide-x tw-divide-white/40 tw-text-sm">
                 <button
-                  class="tw-text-white tw-py-15 tw-px-28"
-                  :class="[visibleImage === 2 ? ' tw-bg-secondary' : 'tw-bg-gray']"
+                  class="tw-text-white tw-py-15 md:tw-px-28 tw-px-20"
+                  :class="[visibleImage === 2 ? ' tw-bg-secondary tw-text-white' : 'tw-bg-white tw-text-third']"
                   @click="visibleImage = 2">
                   С мебелью
                 </button>
                 <button
                   v-if="flat.images[1]"
-                  class="tw-text-white tw-py-15 tw-px-28"
-                  :class="[visibleImage === 1 ? ' tw-bg-secondary' : 'tw-bg-gray']"
+                  class="tw-text-white tw-py-15 md:tw-px-28 tw-px-15"
+                  :class="[visibleImage === 1 ? ' tw-bg-secondary tw-text-white' : 'tw-bg-white tw-text-third']"
                   @click="visibleImage = 1">
                   Без мебели
                 </button>
                 <button
                   v-if="flat.images[3]"
-                  class="tw-text-white tw-py-15 tw-px-28"
-                  :class="[visibleImage === 3 ? ' tw-bg-secondary' : 'tw-bg-gray']"
+                  class="tw-text-white tw-py-15 md:tw-px-28 tw-px-15"
+                  :class="[visibleImage === 3 ? ' tw-bg-secondary tw-text-white' : 'tw-bg-white tw-text-third']"
                   @click="visibleImage = 3">
                   ЗD
                 </button>
@@ -110,10 +85,10 @@
                   class="map-flat__img"
                   :src="flat.images[visibleImage]"
                   style="" />
-                <div class="side side--top">Двор (ул. Новосёлов, 10)</div>
-                <div class="side side--left">ул. Новосёлов</div>
-                <div class="side side--right">ул. Шолохова</div>
-                <div class="side side--bottom">Двор (ул. Новосёлов, 6)</div>
+                <div class="side side--top">Двор</div>
+                <div class="side side--left">ул. Красноводская</div>
+                <div class="side side--right">ул. Менделеева</div>
+                <div class="side side--bottom">ул. Акназарова</div>
               </div>
             </div>
           </div>
@@ -122,46 +97,30 @@
         <div class="last">
           <div
             class="tw-relative tw-flex tw-flex-col md:tw-items-center lg:tw-items-start tw-w-full">
-            <AppButton
-              class="tw-w-full lg:tw-hidden tw-mb-40"
-              @click="showedBook = true">
-              Заявка на бронь
-            </AppButton>
             <div class="2xl:tw-grid 2xl:tw-justify-center">
               <div class="tw-mb-30 md:tw-mb-0 lg:tw-mb-30">
                 <div>
-                  <button class="control" @click="createPDF">
-                    <span class="tw-underline tw-text-gray">Скачать pdf</span>
-                  </button>
+                  <AppButton class="tw-mb-10 tw-w-full" @click="showedBook = true">
+                    Заявка на бронь
+                  </AppButton>
+                  <AppButton
+                    theme="gray"
+                    class="tw-w-full"
+                    @click="createPDF"
+                  >
+                    Скачать pdf
+                  </AppButton>
                 </div>
               </div>
               <div
                 class="tw-flex md:tw-hidden lg:tw-flex tw-justify-between tw-items-center lg:tw-justify-start lg:tw-gap-60">
-                <svg
-                  width="76"
-                  height="50"
-                  viewBox="0 0 76 50"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M42.3241 42.3241C32.7563 51.892 17.2437 51.892 7.67588 42.3241C-1.89196 32.7563 -1.89196 17.2437 7.67588 7.67588C17.2437 -1.89196 32.7563 -1.89196 42.3241 7.67588C51.892 17.2437 51.892 32.7563 42.3241 42.3241Z"
-                    stroke="#9BA5B0" />
-                  <path
-                    d="M37.5473 24.3859C30.6384 21.936 16.7614 16.9748 16.5245 16.7298L14.1557 16.1173L22.4464 24.6922L15.044 33.5733L36.659 25.3047L37.5473 24.3859Z"
-                    fill="#9BA5B0" />
-                  <path
-                    d="M13.23 34.7602C13.0827 34.6079 13 34.4014 13 34.186C13 33.9706 13.0827 33.7641 13.23 33.6118L21.5577 24.9987L13.23 16.3855C13.1039 16.2548 13.0246 16.0834 13.0053 15.8998C12.986 15.7162 13.0278 15.5313 13.1238 15.3755C13.2198 15.2198 13.3642 15.1026 13.5333 15.0432C13.7024 14.9837 13.886 14.9857 14.0539 15.0488L38.4817 24.2361C38.6336 24.2929 38.7648 24.3966 38.8575 24.5333C38.9502 24.6699 39 24.8328 39 24.9998C39 25.1668 38.9502 25.3297 38.8575 25.4663C38.7648 25.603 38.6336 25.7067 38.4817 25.7635L14.0539 34.9508C13.9134 35.0038 13.7613 35.0142 13.6154 34.9809C13.4694 34.9475 13.3357 34.8717 13.23 34.7625L13.23 34.7602ZM16.8431 17.8256L23.2232 24.4244C23.3704 24.5767 23.4532 24.7833 23.4532 24.9987C23.4532 25.214 23.3704 25.4206 23.2232 25.5729L16.8431 32.1717L35.9157 24.9975L16.8431 17.8233V17.8256Z"
-                    fill="#9BA5B0" />
-                  <circle
-                    cx="66"
-                    cy="25"
-                    r="9.5"
-                    fill="#C5EAFF"
-                    stroke="#C5EAFF" />
-                  <path
-                    d="M66.5179 28.1324C65.8859 28.1324 65.3299 28.0044 64.8499 27.7484C64.3699 27.4924 63.9979 27.1324 63.7339 26.6684C63.4779 26.1964 63.3499 25.6524 63.3499 25.0364C63.3499 24.4284 63.4819 23.8924 63.7459 23.4284C64.0099 22.9564 64.3779 22.5924 64.8499 22.3364C65.3299 22.0724 65.8819 21.9404 66.5059 21.9404C67.3699 21.9404 68.1179 22.2444 68.7499 22.8524L67.9339 23.7284C67.7579 23.5524 67.5459 23.4164 67.2979 23.3204C67.0499 23.2164 66.7939 23.1644 66.5299 23.1644C65.9859 23.1644 65.5419 23.3404 65.1979 23.6924C64.8619 24.0364 64.6939 24.4844 64.6939 25.0364C64.6939 25.5964 64.8619 26.0484 65.1979 26.3924C65.5419 26.7364 65.9859 26.9084 66.5299 26.9084C66.8179 26.9084 67.0899 26.8564 67.3459 26.7524C67.6019 26.6484 67.8179 26.4964 67.9939 26.2964L68.8219 27.1964C68.4939 27.5164 68.1419 27.7524 67.7659 27.9044C67.3899 28.0564 66.9739 28.1324 66.5179 28.1324Z"
-                    fill="#2F4258" />
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M63.5 39C63.5 52.531 52.531 63.5 39 63.5C25.469 63.5 14.5 52.531 14.5 39C14.5 25.469 25.469 14.5 39 14.5C52.531 14.5 63.5 25.469 63.5 39Z" stroke="#D6DEDF"/>
+                  <path d="M51.9983 39.3963C51.9948 39.605 51.9085 39.8066 51.7584 39.9567C51.6083 40.1067 51.4068 40.193 51.1981 40.1966L39.3934 40.3955L39.1945 52.2006C39.1912 52.3796 39.1271 52.5542 39.0126 52.6956C38.8981 52.837 38.7401 52.9368 38.5647 52.9784C38.3893 53.0201 38.2069 53.0011 38.0477 52.9247C37.8885 52.8482 37.7619 52.7189 37.6889 52.558L27.069 29.1333C27.0027 28.988 26.9836 28.8242 27.0142 28.6644C27.0448 28.5045 27.1236 28.3563 27.24 28.24C27.3563 28.1237 27.5045 28.0448 27.6644 28.0142C27.8242 27.9836 27.9879 28.0027 28.1333 28.069L51.557 38.6893C51.6918 38.7502 51.8051 38.849 51.8835 38.9739C51.962 39.0989 52.0023 39.2449 51.9999 39.3947L51.9983 39.3963Z" fill="#D6DEDF"/>
+                  <path d="M16.7175 3.28249C20.4275 6.99247 20.4275 13.0075 16.7175 16.7175C13.0075 20.4275 6.99247 20.4275 3.28249 16.7175C-0.427495 13.0075 -0.427494 6.99246 3.28249 3.28248C6.99247 -0.427496 13.0075 -0.427495 16.7175 3.28249Z" fill="#FA864B" stroke="#FA864B"/>
+                  <path d="M10.4678 13.0113C9.8358 13.0113 9.2798 12.8833 8.7998 12.6273C8.3198 12.3713 7.9478 12.0113 7.6838 11.5473C7.4278 11.0753 7.2998 10.5313 7.2998 9.91534C7.2998 9.30734 7.4318 8.77134 7.6958 8.30734C7.9598 7.83534 8.3278 7.47134 8.7998 7.21534C9.2798 6.95134 9.8318 6.81934 10.4558 6.81934C11.3198 6.81934 12.0678 7.12334 12.6998 7.73134L11.8838 8.60734C11.7078 8.43134 11.4958 8.29534 11.2478 8.19934C10.9998 8.09534 10.7438 8.04334 10.4798 8.04334C9.9358 8.04334 9.4918 8.21934 9.1478 8.57134C8.8118 8.91534 8.6438 9.36334 8.6438 9.91534C8.6438 10.4753 8.8118 10.9273 9.1478 11.2713C9.4918 11.6153 9.9358 11.7873 10.4798 11.7873C10.7678 11.7873 11.0398 11.7353 11.2958 11.6313C11.5518 11.5273 11.7678 11.3753 11.9438 11.1753L12.7718 12.0753C12.4438 12.3953 12.0918 12.6313 11.7158 12.7833C11.3398 12.9353 10.9238 13.0113 10.4678 13.0113Z" fill="white"/>
                 </svg>
+
 
                 <div class="tw-basis-[124px]">
                   <img
@@ -340,8 +299,7 @@ export default {
     @apply lg:tw-max-w-[420px] 2xl:tw-max-w-[600px] tw-w-full;
   }
   .map {
-    @apply tw-py-30 lg:tw-border-l lg:tw-border-secondary/15 tw-flex tw-justify-center tw-flex-col lg:tw-justify-start;
-
+    @apply lg:tw-border-l lg:tw-border-secondary/15 tw-flex tw-justify-center tw-flex-col lg:tw-justify-start;
     grid-area: B;
   }
   .last {
@@ -352,7 +310,7 @@ export default {
 </style>
 <style scoped lang="scss">
 .map-flat {
-  @apply tw-bg-white lg:tw-flex lg:tw-flex-col lg:tw-items-center tw-relative tw-gap-[16px];
+  @apply tw-bg-white tw-h-full lg:tw-flex lg:tw-flex-col lg:tw-items-center tw-relative tw-gap-[16px];
   &__wrapper {
     @apply tw-relative  tw-overflow-x-auto lg:tw-flex;
     position: relative;

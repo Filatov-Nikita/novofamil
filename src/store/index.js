@@ -5,8 +5,8 @@ export default createStore({
   state: {
     navShowed: false,
     dialogCallbackShowed: false,
-    contactPhone: "+7 (347) 258-66-55",
-    headerPhone: "+7 (347) 258-66-55",
+    contactPhone: "+7 (347) 224-20-40",
+    headerPhone: "+7 347 224-20-40",
     domrf: 'https://наш.дом.рф/сервисы/каталог-новостроек/объект/53927',
     homeSite: "https://www.aisrb.ru",
     address: null,
@@ -59,7 +59,7 @@ export default createStore({
     },
     setCoords(state, payload) {
       if (typeof payload !== "string") throw "payload must be string";
-      let [lat, lng] = payload.split(", ");
+      let [lat, lng] = payload.split(",");
       lat = parseFloat(lat);
       lng = parseFloat(lng);
       if (isNaN(lat) || isNaN(lng)) throw "lat lng must be float";

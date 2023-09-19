@@ -34,9 +34,9 @@ export default {
         client_secret: process.env.VUE_APP_CLIENT_SECRET,
         header_tel_prefix: rootGetters.prefixhone,
         header_tel: rootGetters.shortPhone,
-        header_logo_image: 'https://2apps.ru/img/logonovosel.png',
-        header_site: 'https://novoselov-ufa.ru',
-        header_email: 'novoselovdom@yandex.ru',
+        header_logo_image: 'https://2apps.ru/img/logonovoufim.png',
+        header_site: 'https://новый-фамильный.рф',
+        header_email: 'agidel-invest@mail.ru',
         pdf_info_price: 'по запросу',
         ...params
       });
