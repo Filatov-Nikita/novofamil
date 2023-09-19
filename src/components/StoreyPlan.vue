@@ -14,7 +14,7 @@
           "
           :viewBox="viewbox"
           fill="none"
-          preserveAspectRatio="xMinYMin slice">
+          >
           <g
             v-for="(flat, index) in flatsMap"
             :key="index"
@@ -34,10 +34,10 @@
               @mouseleave="onMouseleave" />
           </g>
         </svg>
-        <div class="side side--top">Двор (ул. Новосёлов, 10)</div>
-        <div class="side side--left">ул. Новосёлов</div>
-        <div class="side side--right"> ул. Шолохова</div>
-        <div class="side side--bottom">Двор (ул. Новосёлов, 6)</div>
+        <div class="side side--top">Двор</div>
+        <div class="side side--left">ул. Красноводская</div>
+        <div class="side side--right">ул. Менделеева</div>
+        <div class="side side--bottom">ул. Акназарова</div>
       </div>
     </div>
 
@@ -240,7 +240,7 @@ export default {
   min-width: 150px;
   border-radius: 14px;
   color: theme("colors.white");
-  background: theme("colors.secondary");
+  background: theme("colors.base-700");
   box-shadow: 0px 74px 30px rgba(0, 0, 0, 0.01),
     0px 42px 25px rgba(0, 0, 0, 0.05), 0px 19px 19px rgba(0, 0, 0, 0.09),
     0px 5px 10px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
@@ -291,7 +291,7 @@ export default {
 </style>
 <style lang="scss" scoped>
 .map-floor {
-  @apply tw-bg-white lg:tw-flex lg:tw-flex-col lg:tw-items-center tw-relative tw-gap-[36px];
+  @apply tw-bg-white lg:tw-flex lg:tw-flex-col lg:tw-items-center tw-relative tw-gap-[36px] tw-p-16 tw-h-full;
   &__wrapper {
     @apply tw-relative  tw-overflow-x-auto;
     position: relative;
@@ -309,6 +309,7 @@ export default {
     height: 40vh;
     max-width: none;
     // height: 100%;
+    max-height: 400px;
     width: auto;
     margin: auto;
     @apply tw-max-w-none md:tw-max-w-full md:tw-h-full;

@@ -32,7 +32,7 @@ export default {
   line-height: 30px;
   border-radius: 50%;
 
-  @apply tw-border tw-border-gray tw-text-gray tw-inline-block tw-text-xs tw-text-center;
+  @apply tw-border tw-border-third tw-text-third tw-inline-block tw-text-xs tw-text-center;
 }
 
 .btn-storey:hover {
@@ -44,7 +44,7 @@ export default {
 }
 
 .btn-storey--active {
-  @apply tw-bg-secondary tw-border-secondary tw-text-white;
+  @apply tw-bg-orange tw-border-orange tw-text-white;
 }
 
 .btn-storey--active:hover {

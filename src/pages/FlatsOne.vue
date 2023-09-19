@@ -310,7 +310,7 @@ export default {
 </style>
 <style scoped lang="scss">
 .map-flat {
-  @apply tw-bg-white tw-h-full lg:tw-flex lg:tw-flex-col lg:tw-items-center tw-relative tw-gap-[16px];
+  @apply tw-bg-white tw-h-full lg:tw-flex lg:tw-flex-col lg:tw-items-center tw-relative tw-gap-[16px] tw-pb-20;
   &__wrapper {
     @apply tw-relative  tw-overflow-x-auto lg:tw-flex;
     position: relative;
