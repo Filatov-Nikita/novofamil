@@ -1,53 +1,57 @@
 <template>
-  <div
-    class="tw-rounded-t-3xl tw-bg-dark tw-text-white tw-py-40 tw-px-16 md:tw-px-[72px] md:tw-py-80 lg:tw-px-40 lg:tw-py-40 2xl:tw-px-[150px] 2xl:tw-py-[50px] tw-relative">
-    <div
-      class="-tw-tracking-sm tw-max-w-[343px] md:tw-max-w-full 2xl:tw-max-w-[620px] tw-w-full tw-mx-auto tw-relative tw-z-10 tw-flex tw-flex-col tw-gap-30 lg:tw-flex-row lg:tw-gap-36 2xl:tw-flex-col 2xl:tw-gap-40">
-      <div class="">
-        <p
-          class="tw-text-lg tw-font-stolz tw-font-normal tw-leading-120 md:tw-max-w-full lg:tw-max-w-full tw-mb-10 2xl:tw-text-xl">
-          Заявка на бронь
+  <div class="tw-p-16 tw-pb-32 md:tw-p-40 tw-bg-base-700 tw-flex tw-flex-wrap tw-content-center bg-img">
+    <div class="tw-flex tw-flex-col tw-justify-between tw-basis-full lg:tw-basis-[200px] lg:tw-pr-20 tw-relative lg:tw-grow-[2] lg:tw-h-full">
+      <p class="tw-text-[32px] tw-leading-120 tw-uppercase tw-font-nord tw-text-white 2xl:tw-text-xl tw-max-w-[254px] tw-mb-12">
+        Заявка<br>на бронь
       </p>
-        <p
-          class="tw-text-gray tw-font-arial tw-text-md -tw-tracking-sm tw-leading-120 md:tw-max-w-[475px]">
-          Оставьте заявку и наши менеджеры свяжутся с вами в ближайшее время
-        </p>
-      </div>
-      <Form v-slot="{ isSubmitting }" @submit="submit" class="lg:tw-grow">
-        <div class="tw-flex tw-flex-col md:tw-flex-row md:tw-gap-[22px]">
+      <p class="tw-text-third tw-text-base tw-mb-24">
+        Оставьте заявку и&nbsp;наши менеджеры
+        <br>
+        свяжутся с&nbsp;вами в&nbsp;ближайшее время
+      </p>
+      <button
+        class="tw-w-48 tw-h-48 tw-absolute tw-right-16 -tw-top-[50px] lg:tw-right-[64px] lg:tw-top-0 2xl:tw-right-[100px]"
+        @click="$emit('close')"
+      >
+        <svg class=" tw-w-full tw-h-full tw-fill-base-500">
+          <use xlink:href="/sprite.svg#close"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="tw-basis-full lg:tw-grow lg:tw-basis-[200px] lg:tw-h-full">
+      <Form
+        class="tw-flex tw-flex-col tw-justify-between lg:tw-h-full"
+        v-slot="{ isSubmitting }" @submit="submit"
+      >
+        <div>
           <AppInput
-            class="tw-basis-full lg:tw-basis-1/2"
+            class="tw-w-full"
             rules="required"
             name="name"
-            label="Ваше имя" />
+            label="Ваше имя"
+          />
           <AppInput
+            class="tw-w-full"
             rules="required|cellphone"
-            class="tw-basis-full lg:tw-basis-1/2"
             name="cellphone"
             label="Номер телефона"
-            type="tel" />
+            type="tel"
+          />
+        </div>
+        <div>
           <AppButton
-            class="tw-rounded-14 lg:tw-rounded-2xl xl:tw-rounded-14 tw-mt-12 md:tw-mt-0 2xl:tw-ml-15 tw-w-full 2xl:tw-basis-[175px] tw-self-start"
+            class="tw-w-full tw-mb-24"
             type="submit"
-            :disabled="isSubmitting">
+            :disabled="isSubmitting"
+          >
             Отправить
           </AppButton>
+          <AppCheckbox class="" name="agreement" label="Условия" rules="required" :value="true">
+            Я согласен с <AppLink native to="/policy.pdf" target="_blank">условиями передачи информации</AppLink>
+          </AppCheckbox>
         </div>
-        <AppCheckbox
-          class="tw-mt-24 tw-text-gray"
-          name="agreement"
-          label="Условия"
-          rules="required"
-          :value="true"
-        >
-          Я согласен с
-          <AppLink native to="/policy.pdf" target="_blank" class="tw-text-blue"
-            >условиями передачи информации</AppLink
-          >
-        </AppCheckbox>
       </Form>
     </div>
-    <slot />
   </div>
 </template>
 <script>
@@ -58,6 +62,7 @@ export default {
       type: Number
     }
   },
+  emits: ['close'],
   methods: {
     async submit({ name, cellphone }) {
       const payload = {
@@ -71,3 +76,12 @@ export default {
   }
 }
 </script>
+<style scoped>
+@screen lg {
+  .bg-img {
+    background-image: url('@/assets/images/decor-key2.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+</style>

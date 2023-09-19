@@ -1,14 +1,10 @@
 <template>
-  <div class="dialog-full callback tw-z-[910] tw-bg-white" v-if="showed">
+  <div class="dialog-full callback tw-z-[910] bg-main" v-if="showed">
     <Header />
-    <FormBook class="tw-flex tw-w-full tw-items-center tw-justify-center" v-bind="{ flatNumber }">
-      <button
-        class="tw-absolute tw-right-30 tw-top-20"
-        @click="$emit('update:showed', false)"
-      >
-        <AppIcon name="close" size="36px" fill="gray" />
-      </button>
-    </FormBook>
+    <FormBook
+      v-bind="{ flatNumber }"
+      @close="$emit('update:showed', false)"
+    />
   </div>
 </template>
 
