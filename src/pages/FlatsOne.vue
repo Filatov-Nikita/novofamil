@@ -3,13 +3,8 @@
     <div class="tw-container tw-h-full">
       <section v-if="flat" class="content">
         <div class="first">
+          <Breadcrumbs class="tw-mb-30" />
           <div>
-            <a
-              class="tw-underline tw-text-white tw-block tw-mb-30"
-              href="javascript:void(0)"
-              @click.prevent="$router.back()">
-              Назад к этажу
-            </a>
             <div
               class="md:tw-flex md:tw-justify-between md:tw-items-start lg:tw-block">
               <div class="tw-mb-20 lg:tw-mb-30 2xl:tw-flex 2xl:tw-flex-wrap 2xl:tw-w-full">
@@ -35,7 +30,7 @@
                   <path d="M10.4678 13.0113C9.8358 13.0113 9.2798 12.8833 8.7998 12.6273C8.3198 12.3713 7.9478 12.0113 7.6838 11.5473C7.4278 11.0753 7.2998 10.5313 7.2998 9.91534C7.2998 9.30734 7.4318 8.77134 7.6958 8.30734C7.9598 7.83534 8.3278 7.47134 8.7998 7.21534C9.2798 6.95134 9.8318 6.81934 10.4558 6.81934C11.3198 6.81934 12.0678 7.12334 12.6998 7.73134L11.8838 8.60734C11.7078 8.43134 11.4958 8.29534 11.2478 8.19934C10.9998 8.09534 10.7438 8.04334 10.4798 8.04334C9.9358 8.04334 9.4918 8.21934 9.1478 8.57134C8.8118 8.91534 8.6438 9.36334 8.6438 9.91534C8.6438 10.4753 8.8118 10.9273 9.1478 11.2713C9.4918 11.6153 9.9358 11.7873 10.4798 11.7873C10.7678 11.7873 11.0398 11.7353 11.2958 11.6313C11.5518 11.5273 11.7678 11.3753 11.9438 11.1753L12.7718 12.0753C12.4438 12.3953 12.0918 12.6313 11.7158 12.7833C11.3398 12.9353 10.9238 13.0113 10.4678 13.0113Z" fill="white"/>
                 </svg>
 
-                <div class="tw-basis-[124px]">
+                <div class="tw-basis-[80px]">
                   <img
                     width="124"
                     height="64"
@@ -122,7 +117,7 @@
                 </svg>
 
 
-                <div class="tw-basis-[124px]">
+                <div class="tw-basis-[80px]">
                   <img
                     width="124"
                     height="64"
@@ -178,7 +173,7 @@ export default {
     },
   },
   created() {
-    this.getFlat();
+    return this.getFlat();
   },
   data() {
     return {
@@ -193,6 +188,24 @@ export default {
       this.$store.dispatch("loaders/start", "loading flat");
       this.flat = await this.$store.dispatch("flats/flatsOne", { id: this.id });
       this.$store.dispatch("loaders/end", "loading flat");
+      this.setBreadcrumbs();
+    },
+    setBreadcrumbs() {
+      this.$store.commit('breadcrumbs/set', [
+        {
+          label: 'Главная',
+          to: '/'
+        },
+        { label: 'На фасаде', to: { name: 'facad.house' } },
+        {
+          label: `секция ${this.flat.entrance} этаж ${this.flat.storey_number}`,
+          to: { name: 'storey', params: { id: this.flat.storey } }
+        },
+        {
+          label: `кв. №${this.flat.number}`,
+          to: { name: 'flats.one', params: { id: this.flat.id } }
+        },
+      ]);
     },
     showView() {
       this.showedView = true;

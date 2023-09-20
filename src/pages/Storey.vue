@@ -7,13 +7,9 @@
         <Spinner class="tw-absolute" size="100px" />
       </div>
       <div class="content" v-else>
-        <div class="first lg:tw-flex 2xl:tw-block tw-gap-[33px] lg:tw-pt-30">
+        <div class="first lg:tw-flex 2xl:tw-block tw-gap-[33px] lg:tw-pt-[90px] tw-relative">
+          <Breadcrumbs class="tw-mb-30 lg:tw-absolute lg:tw-top-30 lg:tw-left-0" />
           <div>
-            <router-link
-              class="tw-underline tw-text-white tw-block tw-mb-30 md:tw-mb-40 lg:tw-mb-20"
-              :to="{ name: 'facad.house' }">
-              Назад к фасаду
-            </router-link>
             <div class="2xl:tw-grid 2xl:tw-place-content-center">
               <div
                 class="2xl:tw-text-xl tw-text-lg tw-text-white tw-uppercase tw-font-nord tw-leading-120 tw-mb-20 md:tw-mb-40 lg:tw-hidden 2xl:tw-block">
@@ -84,7 +80,7 @@
             <path d="M41.1659 55.9922L41.9237 56.1836C41.7649 56.806 41.4784 57.2812 41.0644 57.6094C40.6529 57.9349 40.149 58.0977 39.5527 58.0977C38.9355 58.0977 38.4329 57.9727 38.0448 57.7227C37.6594 57.4701 37.3652 57.1055 37.162 56.6289C36.9615 56.1523 36.8612 55.6406 36.8612 55.0938C36.8612 54.4974 36.9745 53.9779 37.2011 53.5352C37.4303 53.0898 37.7545 52.7526 38.1737 52.5234C38.5956 52.2917 39.0592 52.1758 39.5644 52.1758C40.1373 52.1758 40.6191 52.3216 41.0097 52.6133C41.4003 52.9049 41.6724 53.3151 41.8261 53.8438L41.08 54.0195C40.9472 53.6029 40.7545 53.2995 40.5019 53.1094C40.2493 52.9193 39.9316 52.8242 39.5487 52.8242C39.1086 52.8242 38.7402 52.9297 38.4433 53.1406C38.149 53.3516 37.942 53.6354 37.8222 53.9922C37.7024 54.3464 37.6425 54.7122 37.6425 55.0898C37.6425 55.5768 37.7128 56.0026 37.8534 56.3672C37.9967 56.7292 38.218 57 38.5175 57.1797C38.817 57.3594 39.1412 57.4492 39.4902 57.4492C39.9146 57.4492 40.274 57.3268 40.5683 57.082C40.8626 56.8372 41.0618 56.474 41.1659 55.9922ZM45.0645 58H44.3614V53.5195C44.1921 53.681 43.9695 53.8424 43.6934 54.0039C43.42 54.1654 43.1739 54.2865 42.9552 54.3672V53.6875C43.3484 53.5026 43.6921 53.2786 43.9864 53.0156C44.2807 52.7526 44.489 52.4974 44.6114 52.25H45.0645V58Z" fill="#9FB7BC"/>
           </svg>
 
-          
+
         </div>
       </div>
     </div>
@@ -130,7 +126,19 @@ export default {
     const load = async () => {
       await getStorey();
       await getEntrance(storey.value.entrance);
+      setBreadcrumbs();
     };
+
+    function setBreadcrumbs() {
+      store.commit('breadcrumbs/set', [
+        { label: 'Главная', to: '/' },
+        { label: 'На фасаде', to: { name: 'facad.house' } },
+        {
+          label: `секция ${storey.value.entrance} этаж ${storey.value.number}`,
+          to: { name: 'storey', params: { id: storey.value.id } }
+        },
+      ]);
+    }
 
     watch(id, load, { immediate: true });
 

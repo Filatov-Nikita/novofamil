@@ -2,7 +2,8 @@
   <div class="bg-main layout tw-min-h-screen">
     <Header ref="header" />
     <main class="tw-relative tw-grid lg:tw-pl-40 lg:tw-grid-cols-[minmax(_285px,_285px)_1fr] 2xl:tw-grid-cols-[minmax(_475px,_475px)_1fr]">
-      <div class="tw-hidden lg:tw-block lg:tw-pt-[84px] 2xl:tw-pt-[100px] tw-pr-20">
+      <div class="tw-hidden lg:tw-block lg:tw-pt-[54px] 2xl:tw-pt-[50px] tw-pr-20">
+        <Breadcrumbs class="tw-mb-30" />
         <h1 class="h1">Подбор<br>На фасаде</h1>
       </div>
       <PopupStorey v-if="activeStorey" :storey="activeStorey" />
@@ -34,7 +35,15 @@ export default {
     };
   },
   created() {
-    this.getEntrance();
+    this.$store.commit('breadcrumbs/set', [
+      {
+        label: 'Главная',
+        to: '/'
+      },
+      { label: 'На фасаде', to: { name: 'facad.house' } },
+    ]);
+
+    return this.getEntrance();
   },
   methods: {
     async getEntrance() {
