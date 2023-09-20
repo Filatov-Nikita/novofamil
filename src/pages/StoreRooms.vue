@@ -1,17 +1,17 @@
 <template>
   <div class="grid">
     <div class="left">
-      <h1 class="tw-text-white tw-font-nord tw-text-md2 2xl:tw-text-xl">
+      <h1 class="tw-text-white tw-font-nord tw-text-md2 2xl:tw-text-xl lg:tw-mb-[70px] 2xl:tw-mb-[90px">
         Кладовые
       </h1>
       <div class="tw-hidden lg:tw-grid tw-justify-center tw-w-fit tw-gap-16">
         <div class="tw-text-secondary tw-text-center">Этаж</div>
         <div class="tw-grid tw-grid-cols-2 tw-gap-12">
-          <button
-            v-for="item in 4"
+          <div
+            v-for="item in floors"
             class="tw-w-32 tw-h-32 tw-rounded-full tw-grid tw-place-content-center tw-text-third tw-border tw-border-third">
-            1
-          </button>
+            {{ item }}
+        </div>
         </div>
       </div>
     </div>
@@ -26,11 +26,15 @@
           xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink">
           <rect width="514.125" height="560" fill="url(#pattern0)" />
-          <g v-for="item in floorsList">
+          <g v-for="item in roomsList">
             <g
               style="mix-blend-mode: multiply"
               opacity="0.4"
-              v-html="item.el"></g>
+              v-html="item.el"
+              @click="showFlat(item.id, item.status)"
+              @mouseenter="onMouseenter($event, item)"
+              @mouseleave="onMouseleave"
+              ></g>
           </g>
 
           <defs>
@@ -56,18 +60,34 @@
   <teleport to="body">
     <div
       v-if="flatPopup"
-      class="flat-popup"
+      class="flat-popup tw-min-w-[189px]"
       :style="flatPopup.coords"
       @mouseenter="showedPopup = true"
       @mouseleave="onMouseleave">
-      <div>hi</div>
+      <div class=" tw-grid">
+
+        <div class=" tw-flex tw-mb-10">
+          <div class=" tw-text-xl tw-mr-10 tw-font-nord">
+            1-34
+          </div>
+          <div class=" tw-text-base tw-mt-10">
+            3.82
+          </div>
+        </div>
+        <AppButton
+        class=" tw-px-16 tw-py-10"
+              
+            >
+            Забронировать
+            </AppButton>
+      </div>
     </div>
 
-    <DialogBook
+    <!-- <DialogBook
       v-if="flatPopup"
       v-model:showed="showedBook"
       :flatNumber="flatPopup.flat.number"
-      @update:showed="flatPopup = null" />
+      @update:showed="flatPopup = null" /> -->
   </teleport>
 
   <!-- @click="showFlat(flat.id, flat.status)"
@@ -79,7 +99,10 @@ import DialogBook from "@/components/DialogBook.vue";
 import { computed, toRef, ref, watch, nextTick } from "vue";
 import { useRouter } from "vue-router";
 import { debounce } from "throttle-debounce";
-const floorsList = [
+const floors = [
+  13,12,11,10,9,8,7,6,5,4,3,2,1
+]
+const roomsList = [
   {
     id: 1,
     floor: 1,
@@ -375,19 +398,20 @@ const showFlat = (flatId, flatStatus) => {
 
 const onMouseenter = (e, flat) => {
   showedPopup.value = true;
+  
   const { left, top } = e.srcElement.getBoundingClientRect();
   const { pageYOffset: pageY, pageXOffset: pageX } = window;
   flatPopup.value = {
-    coords: { top: top + pageY + "px", left: left + pageX + "px" },
+    coords: { top: top + pageY + 10 + "px", left: left + pageX + "px" },
     flat,
   };
-  emit("update:showed", flat);
+  // emit("update:showed", flat);
 };
 
 const hidePopup = debounce(200, () => {
-  if (showedPopup.value || showedBook.value) return;
+  if (showedPopup.value ) return;
   flatPopup.value = null;
-  emit("update:showed", null);
+  // emit("update:showed", null);
 });
 
 const onMouseleave = () => {
@@ -431,5 +455,20 @@ const onMouseleave = () => {
       }
     }
   }
+}
+.flat-popup {
+  position: absolute;
+  transform: translateY(-100%);
+  padding: 14px;
+  display: flex;
+  gap: 27px;
+  z-index: 100;
+  min-width: 150px;
+  border-radius: 14px;
+  color: theme("colors.secondary");
+  background: theme("colors.white");
+  box-shadow: 0px 74px 30px rgba(0, 0, 0, 0.01),
+    0px 42px 25px rgba(0, 0, 0, 0.05), 0px 19px 19px rgba(0, 0, 0, 0.09),
+    0px 5px 10px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
 }
 </style>
