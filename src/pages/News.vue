@@ -3,7 +3,7 @@
     <div class="wrapper tw-h-full">
       <div class=" grid tw-h-full">
 
-        <div class="left app-scroll-y xl:tw-border-r xl:tw-border-r-base-500 tw-pt-32 xl:tw-pr-[78px]">
+        <div class="left app-scroll-y xl:tw-border-r xl:tw-border-r-base-500 tw-pt-32 xl:tw-pr-[78px] lg:tw-pt-[84px] 2xl:tw-pt-[100px] ">
           <h1 class="h1 tw-mb-24">Новости и акции</h1>
           <NewsList v-if="items" :items="items" />
           <div
