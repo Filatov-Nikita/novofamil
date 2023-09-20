@@ -1,8 +1,8 @@
 <template>
   <div class="bg-main layout tw-min-h-screen">
     <Header ref="header" />
-    <main class="tw-relative">
-      <div class="tw-hidden xl:tw-block tw-absolute tw-top-[40px] tw-left-40 tw-pr-20">
+    <main class="tw-relative tw-grid lg:tw-pl-40 lg:tw-grid-cols-[minmax(_285px,_285px)_1fr] 2xl:tw-grid-cols-[minmax(_475px,_475px)_1fr]">
+      <div class="tw-hidden lg:tw-block lg:tw-pt-[84px] 2xl:tw-pt-[100px] tw-pr-20">
         <h1 class="h1">Подбор<br>На фасаде</h1>
       </div>
       <PopupStorey v-if="activeStorey" :storey="activeStorey" />

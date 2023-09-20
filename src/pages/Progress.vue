@@ -6,7 +6,7 @@
 
           <h1 class="h1 tw-mb-20">Ход <br class="md:tw-hidden" /> строительства</h1>
 
-          <div class="tw-flex tw-flex-wrap tw-space-x-10 tw-mb-20 md:tw-mb-30">
+          <div class="tw-flex tw-flex-wrap tw-space-x-10 tw-mb-20 md:tw-mb-32">
             <button
               class="tab"
               :class="{ 'tab--active': curTab.id === tab.id }"

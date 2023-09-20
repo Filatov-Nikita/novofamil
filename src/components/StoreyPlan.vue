@@ -1,7 +1,7 @@
 <template>
   <div class="map-floor">
-    <div class="map-floor__wrapper">
-      <div class="map">
+    <div class="map-floor__wrapper  ">
+      <div class="map tw-w-fit tw-mx-auto">
         <img class="map-floor__img" :src="storeyImg" style="" />
         <svg
           style="
@@ -14,7 +14,9 @@
           "
           :viewBox="viewbox"
           fill="none"
+          preserveAspectRatio="xMinYMin slice"
           >
+          
           <g
             v-for="(flat, index) in flatsMap"
             :key="index"
@@ -291,7 +293,7 @@ export default {
 </style>
 <style lang="scss" scoped>
 .map-floor {
-  @apply tw-bg-white lg:tw-flex lg:tw-flex-col lg:tw-items-center tw-relative tw-gap-[36px] tw-p-16 tw-h-full;
+  @apply tw-bg-white lg:tw-flex lg:tw-flex-col lg:tw-justify-center lg:tw-items-center tw-relative tw-gap-[36px] tw-p-16 tw-h-full;
   &__wrapper {
     @apply tw-relative  tw-overflow-x-auto;
     position: relative;

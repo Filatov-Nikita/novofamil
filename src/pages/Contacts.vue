@@ -19,8 +19,8 @@
               )}`">
               {{ $store.state.contactPhone }}
             </a>
-            <a class="tw-block" href="mailto:grany-ufa@yandex.ru">
-              novoselovdom@yandex.ru
+            <a class="tw-block" href="mailto:agidel-invest@mail.ru">
+              agidel-invest@mail.ru
             </a>
           </div>
           <div class="md:tw-px-20" v-html="worktime"></div>

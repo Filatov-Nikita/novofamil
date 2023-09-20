@@ -1,6 +1,6 @@
 <template>
   <Field v-bind="$props" v-slot="{ handleChange, value, errorMessage }">
-    <div class="tw-relative" v-bind="$attrs">
+    <div class="tw-relative tw-pb-20" v-bind="$attrs">
       <div class="tw-flex tw-items-center" @click="handleChange(!value)">
         <div
           class="tw-w-14 tw-h-14 tw-rounded-full tw-border tw-border-white tw-leading-[12px] tw-text-center tw-cursor-pointer tw-text-[0px]"

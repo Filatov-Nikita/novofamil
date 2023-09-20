@@ -312,7 +312,7 @@ export default {
 .map-flat {
   @apply tw-bg-white tw-h-full lg:tw-flex lg:tw-flex-col lg:tw-items-center tw-relative tw-gap-[16px] tw-pb-20;
   &__wrapper {
-    @apply tw-relative  tw-overflow-x-auto lg:tw-flex;
+    @apply tw-relative  tw-overflow-x-auto lg:tw-grid lg:tw-h-full lg:tw-content-center;
     position: relative;
     scrollbar-width: none;
     width: auto;
@@ -325,7 +325,8 @@ export default {
     // height: 100%;
     width: 100%;
     margin: auto;
-    @apply tw-max-w-none lg:tw-max-w-[320px] lg:tw-max-h-[320px] 2xl:tw-max-w-[560px] 2xl:tw-max-h-[560px] md:tw-h-full;
+    object-fit: cover;
+    @apply tw-max-w-none  tw-h-[290px] lg:tw-h-[320px]  2xl:tw-h-[560px] md:tw-h-full;
   }
 }
 </style>
