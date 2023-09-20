@@ -18,4 +18,5 @@ export default (app) => {
   app.component('TabsContent', require('@/components/TabsContent.vue').default);
   app.component('Spinner', require('@/components/Spinner.vue').default);
   app.component('TabsContentItem', require('@/components/TabsContentItem.vue').default);
+  app.component('Breadcrumbs', require('@/components/Breadcrumbs.vue').default);
 };

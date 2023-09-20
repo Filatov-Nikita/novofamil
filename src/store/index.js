@@ -138,5 +138,6 @@ export default createStore({
     entrances: require("./entrances").default,
     loaders: require("./loaders").default,
     galleries: require("./galleries").default,
+    breadcrumbs: require("./breadcrumbs").default,
   },
 });
