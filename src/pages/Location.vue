@@ -3,6 +3,7 @@
     <div
       class="wrapper xl:tw-h-full xl:tw-flex xl-separator md:tw-pb-[410px] xl:tw-pb-0">
       <div class="xl:tw-w-1/2 md:tw-relative md:tw-z-10">
+        <Breadcrumbs class="tw-mb-40" />
         <h1 class="h1 tw-mb-20 2xl:tw-mb-[50px]">Расположение</h1>
         <div
           class="tw-flex tw-overflow-x-auto app-scroll-x tw-pb-20 tw-mb-20 -tw-ml-20 md:tw-max-w-[700px] md:-tw-mt-16 md:tw-flex-wrap xl:tw-max-w-[450px] xl:-tw-mt-10 xl:-tw-ml-30">
@@ -20,7 +21,7 @@
         </div>
       </div>
       <div
-        class="xl:tw-w-1/2 md:tw-absolute md:tw-bottom-0 md:tw-left-0 md:tw-right-0 md:tw-h-full md:tw-pt-[220px] xl:tw-left-auto xl:tw-pt-0 xl:tw-top-0 2xl:tw-mt-0 2xl:tw-py-30">
+        class="xl:tw-w-1/2 md:tw-absolute md:tw-bottom-0 md:tw-left-0 md:tw-right-0 md:tw-h-full md:tw-pt-[280px] xl:tw-left-auto xl:tw-pt-0 xl:tw-top-0 2xl:tw-mt-0 2xl:tw-py-30">
         <yandex-map
           class="tw-h-[290px] md:tw-h-full"
           :coords="homePoint.coords"
@@ -38,9 +39,16 @@
 </template>
 
 <script>
+import Breadcrumbs from "@/components/Breadcrumbs.vue";
 import TabsItem from "@/components/TabsItem.vue";
 
 export default {
+  created() {
+    this.$store.commit('breadcrumbs/set', [
+      { label: 'Главная', to: '/' },
+      { label: 'Расположение', to: { name: 'location' } },
+    ]);
+  },
   data() {
     return {
       categoryIcon: {
@@ -150,7 +158,8 @@ export default {
   },
   components: {
     TabsItem,
-  },
+    Breadcrumbs
+},
 };
 
 function getPoints() {

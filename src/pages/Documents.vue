@@ -2,8 +2,8 @@
   <app-page class=" tw-pt-0 documents">
     <div class="wrapper xl:tw-h-full ">
       <div class="grid xl:tw-h-full">
-        <div class="xl:tw-border-r  xl:tw-border-r-base-500 tw-pt-[84px] 2xl:tw-pt-[100px]">
-
+        <div class="xl:tw-border-r  xl:tw-border-r-base-500 tw-pt-[84px] 2xl:tw-pt-[100px] tw-relative">
+          <Breadcrumbs class="tw-absolute tw-top-30 tw-left-0" />
           <h1 class="h1 tw-mb-32">Документы</h1>
         </div>
 
@@ -17,11 +17,21 @@
             наш.дом.рф
           </a>
         </div>
-        
+
       </div>
     </div>
   </app-page>
 </template>
+<script>
+export default {
+  async created() {
+    this.$store.commit('breadcrumbs/set', [
+        { label: 'Главная', to: '/' },
+        { label: 'Документы', to: { name: 'documents' } },
+    ]);
+  },
+}
+</script>
 <style lang="scss" scoped>
 .documents {
   position: relative;

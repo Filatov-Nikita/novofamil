@@ -1,5 +1,6 @@
 <template>
-  <app-page class=" lg:tw-pb-60 2xl:tw-pb-20">
+  <app-page class="lg:tw-pb-60 2xl:tw-pb-20 tw-relative" paddingClasses="tw-pt-60">
+    <Breadcrumbs class="tw-absolute tw-top-20 tw-left-16" />
     <SwiperGallery v-if="gallery" :sources="images" />
   </app-page>
 </template>
@@ -9,6 +10,11 @@ import SwiperGallery from '@/components/SwiperGallery.vue';
 
 export default {
   created() {
+    this.$store.commit('breadcrumbs/set', [
+      { label: 'Главная', to: '/' },
+      { label: 'Галерея', to: { name: 'gallery' } },
+    ]);
+
     return this.getGallery();
   },
   data() {

@@ -2,8 +2,8 @@
   <app-page class="tw-pt-0 2xl:tw-pb-0 tw-relative">
     <div class="wrapper tw-h-full">
       <div class="grid tw-h-full">
-        <div class=" xl:tw-border-r xl:tw-border-r-base-500 tw-pt-32 tw-pb-32 xl:tw-pr-[78px] lg:tw-pt-[84px] 2xl:tw-pt-[100px] ">
-
+        <div class="xl:tw-border-r xl:tw-border-r-base-500 tw-pt-32 tw-pb-32 xl:tw-pr-[78px] lg:tw-pt-[84px] 2xl:tw-pt-[100px] tw-relative">
+          <Breadcrumbs class="tw-mb-30 lg:tw-absolute lg:tw-top-30 lg:tw-left-0" />
           <h1 class="h1 tw-mb-20">Ход <br class="md:tw-hidden" /> строительства</h1>
 
           <div class="tw-flex tw-flex-wrap tw-space-x-10 tw-mb-20 md:tw-mb-32">
@@ -85,6 +85,12 @@ import SwiperGallery from '@/components/SwiperGallery.vue';
 import { GDialog } from 'gitart-vue-dialog';
 
 export default {
+  created() {
+    this.$store.commit('breadcrumbs/set', [
+      { label: 'Главная', to: '/' },
+      { label: 'Ход строительства', to: { name: 'progress' } },
+    ]);
+  },
   setup() {
     const store = useStore();
     const grid = useGrid();
@@ -210,7 +216,7 @@ export default {
   .items {
     height: calc(100vh - 410px);
   }
-  
+
 
   .overlay {
     height: calc(100vh - 192px);
@@ -245,7 +251,7 @@ export default {
   .items {
     height: calc(100vh - 610px);
   }
-  
+
 
   /* .grid:first-child {
     grid-row: 1 / 2;

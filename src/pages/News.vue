@@ -3,7 +3,8 @@
     <div class="wrapper tw-h-full">
       <div class=" grid tw-h-full">
 
-        <div class="left app-scroll-y xl:tw-border-r xl:tw-border-r-base-500 tw-pt-32 xl:tw-pr-[78px] lg:tw-pt-[84px] 2xl:tw-pt-[100px] ">
+        <div class="left app-scroll-y xl:tw-border-r xl:tw-border-r-base-500 tw-pt-32 xl:tw-pr-[78px] lg:tw-pt-[84px] 2xl:tw-pt-[100px] tw-relative tw-pb-40">
+          <Breadcrumbs class="tw-mb-30 lg:tw-absolute lg:tw-top-20 lg:tw-left-0" />
           <h1 class="h1 tw-mb-24">Новости и акции</h1>
           <NewsList v-if="items" :items="items" />
           <div
@@ -36,6 +37,7 @@
 import NewsList from '@/components/NewsList.vue';
 import DialogNewsShow from '@/components/DialogNewsShow.vue';
 import NewsShow from '@/components/NewsShow.vue';
+import Breadcrumbs from '@/components/Breadcrumbs.vue';
 
 export default {
   provide() {
@@ -57,7 +59,12 @@ export default {
     }
   },
   async created() {
-    this.getNews();
+    this.$store.commit('breadcrumbs/set', [
+      { label: 'Главная', to: '/' },
+      { label: 'Новости и акции', to: { name: 'news' } },
+    ]);
+
+    return this.getNews();
   },
   data() {
     return {
@@ -107,8 +114,9 @@ export default {
   components: {
     NewsList,
     DialogNewsShow,
-    NewsShow
-  }
+    NewsShow,
+    Breadcrumbs
+}
 }
 </script>
 

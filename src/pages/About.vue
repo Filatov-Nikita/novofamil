@@ -3,7 +3,8 @@
     <div class="grid lg:tw-border-b lg:tw-border-solid lg:tw-border-base-500 tw-mb-48 2xl:tw-mb-[96px]">
       <div class="wrapper">
         <div class="md:tw-mt-0 lg:tw-flex">
-          <div class="lg:tw-w-1/2 lg:tw-py-[84px] 2xl:tw-py-[100px]">
+          <div class="lg:tw-w-1/2 lg:tw-py-[84px] 2xl:tw-py-[100px] tw-relative">
+            <Breadcrumbs class="tw-mb-20 lg:tw-absolute lg:tw-top-20 lg:tw-left-0"/>
             <h1 class="h1 tw-text-[32px] tw-text-white tw-font-nord tw-mb-30 2xl:tw-text-xl">
               О проекте
             </h1>
@@ -115,9 +116,16 @@
 </template>
 
 <script>
+import Breadcrumbs from '@/components/Breadcrumbs.vue';
 import FormCallBack from '@/components/FormCallBack.vue';
 
 export default {
+  created() {
+    this.$store.commit('breadcrumbs/set', [
+      { label: 'Главная', to: '/' },
+      { label: 'О проекте', to: { name: 'about' } },
+    ])
+  },
   data() {
     return {
       cards: [
@@ -147,8 +155,9 @@ export default {
     }
   },
   components: {
-    FormCallBack
-  }
+    FormCallBack,
+    Breadcrumbs
+}
 }
 
 function getItems() {

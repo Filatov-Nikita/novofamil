@@ -1,27 +1,25 @@
 <template>
   <app-page class="xl-separator tw-relative tw-pt-0 ">
     <div class="wrapper tw-h-full">
-      <div class=" grid xl:tw-h-full">
-        <div class=" tw-overflow-hidden xl:tw-border-r xl:tw-border-r-base-500 tw-pt-32 xl:tw-pr-[78px] xl:tw-pt-[84px] 2xl:tw-pt-[100px]">
+      <div class="grid xl:tw-h-full">
+        <div class="tw-overflow-hidden xl:tw-border-r xl:tw-border-r-base-500 tw-pt-32 xl:tw-pr-[78px] xl:tw-pt-[84px] 2xl:tw-pt-[100px] tw-relative">
+          <Breadcrumbs class="tw-mb-30 xl:tw-absolute xl:tw-top-30 xl:tw-left-0" />
           <h1 class="h1 tw-mb-20 md:tw-mb-30 2xl:tw-mb-40">Условия покупки</h1>
-
-            <div
-              class="tw-flex tw-pb-20 tw-overflow-x-auto tw-mb-30 md:tw-mb-10 app-scroll-x xl:tw-flex-wrap xl:-tw-mx-10 xl:-tw-mt-10"
-            >
-              <TabsItem
-                class="tw-shrink-0 tw-mr-20 last:tw-mr-0 xl:tw-mx-10 xl:tw-mt-10"
-                v-for="(tab, key) in tabs"
-                :key="tab.label"
-                :class="[ tab.class ]"
-                :active="tabValue === key"
-                v-bind="tab"
-                @click="tabValue = tab.icon"
-              />
-            </div>
-
-
+          <div
+            class="tw-flex tw-pb-20 tw-overflow-x-auto tw-mb-30 md:tw-mb-10 app-scroll-x xl:tw-flex-wrap xl:-tw-mx-10 xl:-tw-mt-10"
+          >
+            <TabsItem
+              class="tw-shrink-0 tw-mr-20 last:tw-mr-0 xl:tw-mx-10 xl:tw-mt-10"
+              v-for="(tab, key) in tabs"
+              :key="tab.label"
+              :class="[ tab.class ]"
+              :active="tabValue === key"
+              v-bind="tab"
+              @click="tabValue = tab.icon"
+            />
+          </div>
         </div>
-        <TabsContent v-model="tabValue" class=" xl:tw-justify-self-center xl:tw-pt-[84px] 2xl:tw-pt-[100px] tw-pl-20 2xl:tw-pl-[60px]">
+        <TabsContent v-model="tabValue" class=" xl:tw-justify-self-center xl:tw-pt-[84px] 2xl:tw-pt-[100px] tw-mb-40 xl:tw-pl-20 2xl:tw-pl-[60px]">
           <TabsContentItem
             v-for="(section, key) in content"
             :key="key"
@@ -62,6 +60,12 @@
 import TabsItem from '@/components/TabsItem.vue';
 
 export default {
+  created() {
+    this.$store.commit('breadcrumbs/set', [
+      { label: 'Главная', to: '/' },
+      { label: 'Условия покупки', to: { name: 'purchase' } },
+    ])
+  },
   data() {
     return {
       tabValue: 'calc',

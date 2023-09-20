@@ -2,6 +2,7 @@
   <app-page>
     <div>
       <div class="wrapper">
+        <Breadcrumbs class="tw-mb-30" />
         <h1 class="h1">Подбор по параметрам</h1>
         <section class="tw-pb-20 lg:tw-py-80 md:tw-pb-60 2xl:tw-pb-120 tw-pt-30 md:tw-pt-40">
           <div class="tw-flex tw-flex-wrap -tw-ml-24 md:-tw-mt-6 md:tw-max-w-[720px] xl:tw-max-w-[1172px]">
@@ -67,8 +68,15 @@ import SelectStoreys from '@/components/SelectStoreys.vue';
 import SelectSquare from '@/components/SelectSquare.vue';
 import { ref, watch } from 'vue';
 import { useStore } from 'vuex';
+import Breadcrumbs from '@/components/Breadcrumbs.vue';
 
 export default {
+  created() {
+    this.$store.commit('breadcrumbs/set', [
+      { label: 'Главная', to: '/' },
+      { label: 'Подбор по параметрам', to: { name: 'flats.params' } },
+    ])
+  },
   setup() {
     const store = useStore();
 
@@ -168,8 +176,9 @@ export default {
     SelectLiter,
     SelectRooms,
     SelectStoreys,
-    SelectSquare
-  }
+    SelectSquare,
+    Breadcrumbs
+}
 }
 </script>
 

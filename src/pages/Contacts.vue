@@ -1,5 +1,8 @@
 <template>
-  <app-page class="2xl:tw-pt-[70px]">
+  <app-page class="2xl:tw-pt-[40px]">
+    <div class="wrapper">
+      <Breadcrumbs class="tw-mb-30" />
+    </div>
     <div class="wrapper tw-relative contacts">
       <h1 class="tw-text-lg tw-font-nord tw-text-white tw-uppercase contacts-a">
         Контакты
@@ -32,11 +35,17 @@
 </template>
 
 <script>
+import Breadcrumbs from "@/components/Breadcrumbs.vue";
 import FormCallBack from "@/components/FormCallBack.vue";
 import { mapActions, mapGetters } from "vuex";
 
 export default {
   async created() {
+    this.$store.commit('breadcrumbs/set', [
+      { label: 'Главная', to: '/' },
+      { label: 'Контакты', to: { name: 'contacts' } },
+    ]);
+
     if (this.address === null) {
       await this.getAddress();
     }
@@ -57,7 +66,8 @@ export default {
   },
   components: {
     FormCallBack,
-  },
+    Breadcrumbs
+},
 };
 </script>
 
