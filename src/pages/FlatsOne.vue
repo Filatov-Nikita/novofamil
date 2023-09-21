@@ -63,7 +63,7 @@
                   class="tw-py-15 md:tw-px-28 tw-px-15"
                   :class="[visibleImage === 1 ? ' tw-bg-secondary tw-text-white' : 'tw-bg-white tw-text-third']"
                   @click="visibleImage = 1">
-                  Без мебели
+                  2D
                 </button>
                 <button
                   v-if="flat.images[3]"
