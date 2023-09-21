@@ -5,8 +5,8 @@ export default createStore({
   state: {
     navShowed: false,
     dialogCallbackShowed: false,
-    contactPhone: "+7 (347) 224-20-40",
-    headerPhone: "+7 347 224-20-40",
+    contactPhone: "+7 (347) 258-66-11",
+    headerPhone: "+7 347 258-66-11",
     domrf: 'https://наш.дом.рф/сервисы/каталог-новостроек/объект/53927',
     homeSite: "https://www.aisrb.ru",
     address: null,

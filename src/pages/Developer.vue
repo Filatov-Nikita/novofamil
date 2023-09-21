@@ -19,15 +19,15 @@
               <p class="tw-leading-120 tw-text-third">лет на рынке <br/> недвижимости</p>
             </div>
             <div class="tw-pt-20 tw-pl-40 tw-w-1/2 md:tw-w-auto md:tw-basis-[150px]">
-              <p class="tw-text-lg tw-leading-100 tw-mb-10 tw-text-white tw-uppercase tw-font-nord md:tw-text-xl10 xl:tw-text-xl 2xl:tw-text-xl10">22</p>
+              <p class="tw-text-lg tw-leading-100 tw-mb-10 tw-text-white tw-uppercase tw-font-nord md:tw-text-xl10 xl:tw-text-xl 2xl:tw-text-xl10">24</p>
               <p class="tw-leading-120 tw-text-third">реализованных <br/> домов</p>
             </div>
             <div class="tw-pt-20 tw-pl-40 tw-w-1/2 md:tw-w-auto md:tw-basis-[150px]">
-              <p class="tw-text-lg tw-leading-100 tw-mb-10 tw-text-white tw-uppercase tw-font-nord md:tw-text-xl10 xl:tw-text-xl 2xl:tw-text-xl10">14</p>
+              <p class="tw-text-lg tw-leading-100 tw-mb-10 tw-text-white tw-uppercase tw-font-nord md:tw-text-xl10 xl:tw-text-xl 2xl:tw-text-xl10">15</p>
               <p class="tw-leading-120 tw-text-third">домов сданы <br/> раньше срока</p>
             </div>
             <div class="tw-pt-20 tw-pl-40 tw-w-1/2 md:tw-w-auto">
-              <p class="tw-text-lg tw-leading-100 tw-mb-10 tw-text-white tw-uppercase tw-font-nord md:tw-text-xl10 xl:tw-text-xl 2xl:tw-text-xl10">3 280</p>
+              <p class="tw-text-lg tw-leading-100 tw-mb-10 tw-text-white tw-uppercase tw-font-nord md:tw-text-xl10 xl:tw-text-xl 2xl:tw-text-xl10">3 828</p>
               <p class="tw-leading-120 tw-text-third">квартир</p>
             </div>
           </div>

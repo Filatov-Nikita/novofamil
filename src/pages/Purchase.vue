@@ -29,7 +29,7 @@
               <h2 class="tw-text-[32px] tw-text-white tw-uppercase tw-font-nord tw-mb-20 2xl:tw-text-lg">
                 {{ tabs[key].label }}
               </h2>
-              <p class="tw-mb-20 2xl:tw-mb-30 tw-text-gray" v-if="key === 'tradein'">{{ tradeinTitle }}</p>
+              <p class="tw-mb-20 2xl:tw-mb-30 tw-text-white" v-if="key === 'tradein'" v-html="tradeinTitle"></p>
               <ul class="2xl:tw-flex 2xl:tw-flex-wrap 2xl:-tw-ml-48 -tw-mt-10">
                 <li
                   class="tw-text-sm tw-text-white tw-flex list-marker 2xl:tw-w-1/2 2xl:tw-pl-48 tw-pt-10"
@@ -40,6 +40,9 @@
                     {{ li.text }}
                   </li>
               </ul>
+              <p v-if="key === 'tradein'" class="tw-text-xs tw-text-third tw-mt-30">
+                * Подробнее о приобретении квартир по программе трейд-ин уточняйте в офисе продаж
+              </p>
               <AppButton
                 v-if="tabValue === 'calc'"
                 class="tw-mt-30 tw-w-full"
@@ -215,7 +218,7 @@ export default {
           },
         ],
       },
-      tradeinTitle: 'Если для покупки квартиры вам необходимо продать имеющееся жилье, вы можете воспользоваться услугой Trade-in. Сотрудники отдела продаж сделают все за вас: проведут оценку рыночной стоимости, проверят юридическую чистоту, подадут объявление о продаже вашей старой квартиры, проведут сделку. И все это бесплатно.'
+      tradeinTitle: 'Если для покупки квартиры вам необходимо продать имеющееся жилье, вы можете воспользоваться услугой Trade-in. Сотрудники отдела продаж сделают все за вас: проведут оценку рыночной стоимости, проверят юридическую чистоту, подадут объявление о продаже вашей старой квартиры, проведут сделку. И все это бесплатно<sup>*</sup>'
     };
   },
   components: {
