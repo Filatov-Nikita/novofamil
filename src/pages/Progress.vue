@@ -2,7 +2,7 @@
   <app-page class="tw-pt-0 2xl:tw-pb-0 tw-relative">
     <div class="wrapper tw-h-full">
       <div class="grid tw-h-full">
-        <div class="xl:tw-border-r xl:tw-border-r-base-500 tw-pt-32 tw-pb-32 xl:tw-pr-[78px] lg:tw-pt-[84px] 2xl:tw-pt-[100px] tw-relative">
+        <div class="2xl:tw-border-r 2xl:tw-border-r-base-500 tw-pt-32 tw-pb-32 2xl:tw-pr-[78px] lg:tw-pt-[84px] 2xl:tw-pt-[100px] tw-relative">
           <Breadcrumbs class="tw-mb-30 lg:tw-absolute lg:tw-top-30 lg:tw-left-0" />
           <h1 class="h1 tw-mb-20">Ход <br class="md:tw-hidden" /> строительства</h1>
 
@@ -27,13 +27,13 @@
           </div>
 
           <div class="2xl:tw-pb-40">
-            <AppButton class="tw-w-full  md:tw-max-w-[200px] xl:tw-max-w-full tw-block" tag="span" @click="showedView = true">
+            <AppButton class="tw-w-full  md:tw-max-w-[200px] 2xl:tw-max-w-full tw-block" tag="span" @click="showedView = true">
               Онлайн-трансляция
             </AppButton>
           </div>
         </div>
 
-        <div v-if="$grid['2xl']" class="xl:tw-pt-32 xl:tw-pl-48">
+        <div v-if="$grid['2xl']" class="2xl:tw-pt-32 2xl:tw-pl-48">
 
           <div  class="tw-relative overlay tw-overflow-x-hidden app-scroll-y tw-pr-12 ">
             <div class="tw-flex tw-flex-wrap -tw-mx-10 -tw-mt-20">
@@ -205,41 +205,9 @@ export default {
   }
 }
 
-@screen xl {
-  .grid {
-    @apply tw-grid tw-grid-cols-2;
-  }
-
-  .items {
-    height: calc(100vh - 410px);
-  }
-
-
-  .overlay {
-    height: calc(100vh - 192px);
-  }
-  /* .grid:first-child {
-    grid-row: 1 / 2;
-  }
-
-  .grid > *:nth-child(2) {
-    grid-row: 2 / 3;
-  }
-
-  .grid > *:nth-child(3) {
-    grid-row: 3 / 4;
-  }
-
-  .grid > *:nth-child(4) {
-    grid-row: 1 / 4;
-    padding-left: 78px;
-    align-self: center;
-  } */
-}
-
 @screen 2xl {
   .grid {
-    @apply  tw-grid-cols-[minmax(0px,_795px)_1fr]
+    @apply tw-grid tw-grid-cols-[minmax(0px,_795px)_1fr]
   }
   .overlay {
     height: calc(100vh - 250px);
