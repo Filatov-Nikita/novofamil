@@ -3,6 +3,7 @@ import YmapPlugin from 'vue-yandex-maps';
 import VueScreen from 'vue-screen';
 import Maska from 'maska';
 import Notifications from '@kyvg/vue3-notification'
+import tailwindConfig from '../tailwind.config.js'
 
 export default (app) => {
   const settings = {
@@ -17,14 +18,7 @@ export default (app) => {
   app.use(YmapPlugin, settings);
   app.use(Notifications);
   app.use(Maska);
-
   app.use(VueScreen, {
-    grid: {
-      sm: 640,
-      md: 768,
-      lg: 1024,
-      xl: 1200,
-      '2xl': 1920,
-    }
+    grid: tailwindConfig.theme.screens
   });
 }

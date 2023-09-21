@@ -22,7 +22,7 @@
               v-for="item in items" :key="item.id"
               class="tw-w-1/2 tw-pl-10 tw-pt-10 md:tw-w-1/3"
               v-bind="item"
-              @click="grid['2xl'] ? show2xl(item.images) : show(item.images)"
+              @click="$grid['2xl'] ? show2xl(item.images) : show(item.images)"
             />
           </div>
 
@@ -79,7 +79,6 @@
 <script>
 import { ref, computed, watch } from 'vue';
 import { useStore } from 'vuex';
-import { useGrid } from 'vue-screen'
 import ProgressItem from '@/components/ProgressItem.vue';
 import SwiperGallery from '@/components/SwiperGallery.vue';
 import { GDialog } from 'gitart-vue-dialog';
@@ -93,7 +92,6 @@ export default {
   },
   setup() {
     const store = useStore();
-    const grid = useGrid();
     const curTab = ref(null);
     const galleries = ref(null);
     const gallery = ref(null);
@@ -155,7 +153,6 @@ export default {
       items,
       show,
       show2xl,
-      grid,
       selectedImage,
       showedView
     };
