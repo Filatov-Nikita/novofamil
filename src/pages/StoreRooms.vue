@@ -17,13 +17,19 @@
           <rect width="514.125" height="560" fill="url(#pattern0)" />
           <g v-for="item in roomsList" :key="item.number">
             <g
+              v-if="!$screen.touch"
               style="mix-blend-mode: multiply"
               opacity="0.4"
               v-html="item.el"
-              @click="showFlat(item.id, item.status)"
               @mouseenter="onMouseenter($event, item)"
               @mouseleave="onMouseleave"
-              ></g>
+            ></g>
+            <g v-else
+              style="mix-blend-mode: multiply"
+              opacity="0.4"
+              v-html="item.el"
+              @click="onMouseenter($event, item)"
+            ></g>
           </g>
 
           <defs>
@@ -46,47 +52,48 @@
       </div>
     </div>
   </div>
+
   <teleport to="body">
     <div
-      v-if="flatPopup"
+      v-if="flatPopup && currentFlat"
       class="flat-popup tw-min-w-[189px]"
       :style="flatPopup.coords"
-      @mouseenter="showedPopup = true"
-      @mouseleave="onMouseleave">
+      v-bind="{
+        onMouseenter: !$screen.touch ? () => showedPopup = true : null,
+        onMouseleave: !$screen.touch ? onMouseleave : null
+      }"
+    >
       <div class=" tw-grid">
 
         <div class=" tw-flex tw-mb-10">
           <div class=" tw-text-xl tw-mr-10 tw-font-nord">
-            1-{{ flatPopup.flat.id }}
+            1-{{ currentFlat.id }}
           </div>
           <div class=" tw-text-base tw-mt-10">
-            {{ flatPopup.flat.square }}
+            {{ currentFlat.square }}
           </div>
         </div>
-        <AppButton
-        class=" tw-px-16 tw-py-10"
-
-            >
+        <AppButton class="tw-px-16 tw-py-10" @click="showedBook = true">
             Забронировать
-            </AppButton>
+        </AppButton>
+        <AppButton v-if="$screen.touch" theme="gray" class="tw-px-16 tw-py-10 tw-mt-4" @click="closePopup">
+            Закрыть
+        </AppButton>
       </div>
     </div>
 
-    <!-- <DialogBook
-      v-if="flatPopup"
+    <DialogBook
+      v-if="currentFlat"
+      themeType="кладовая"
       v-model:showed="showedBook"
-      :flatNumber="flatPopup.flat.number"
-      @update:showed="flatPopup = null" /> -->
+      :flatNumber="currentFlat.id"
+      @update:showed="currentFlat = null"
+    />
   </teleport>
-
-  <!-- @click="showFlat(flat.id, flat.status)"
-              @mouseenter="onMouseenter($event, flat)"
-              @mouseleave="onMouseleave" -->
 </template>
 <script setup>
 import DialogBook from "@/components/DialogBook.vue";
-import { computed, toRef, ref, watch, nextTick } from "vue";
-import { useRouter } from "vue-router";
+import { ref } from "vue";
 import { debounce } from "throttle-debounce";
 
 const roomsList = [
@@ -431,13 +438,11 @@ const roomsList = [
     el: '<rect data-v-0c4438bb="" x="105.369" y="322.56" width="26.1632" height="29.2096" fill="#0AB81B"></rect>',
   },
 ];
-const router = useRouter();
+
 const flatPopup = ref(null);
 const showedPopup = ref(null);
-const showFlat = (flatId, flatStatus) => {
-  if (flatStatus === "sold") return;
-  router.push({ name: "flats.one", params: { id: flatId } });
-};
+const currentFlat = ref(null);
+const showedBook = ref(false);
 
 const onMouseenter = (e, flat) => {
   showedPopup.value = true;
@@ -446,21 +451,24 @@ const onMouseenter = (e, flat) => {
   const { pageYOffset: pageY, pageXOffset: pageX } = window;
   flatPopup.value = {
     coords: { top: top + pageY + 10 + "px", left: left + pageX + "px" },
-    flat,
   };
-  // emit("update:showed", flat);
+  currentFlat.value = flat;
 };
 
 const hidePopup = debounce(200, () => {
   if (showedPopup.value ) return;
   flatPopup.value = null;
-  // emit("update:showed", null);
 });
 
 const onMouseleave = () => {
   showedPopup.value = false;
   hidePopup();
 };
+
+function closePopup() {
+  showedPopup.value = false;
+  flatPopup.value = null;
+}
 </script>
 <style lang="scss" scoped>
 .grid {
