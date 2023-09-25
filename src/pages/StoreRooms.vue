@@ -4,16 +4,6 @@
       <h1 class="tw-text-white tw-font-nord tw-text-md2 2xl:tw-text-xl lg:tw-mb-[70px] 2xl:tw-mb-[90px">
         Кладовые
       </h1>
-      <div class="tw-hidden lg:tw-grid tw-justify-center tw-w-fit tw-gap-16">
-        <div class="tw-text-secondary tw-text-center">Этаж</div>
-        <div class="tw-grid tw-grid-cols-2 tw-gap-12">
-          <div
-            v-for="item in floors"
-            class="tw-w-32 tw-h-32 tw-rounded-full tw-grid tw-place-content-center tw-text-third tw-border tw-border-third">
-            {{ item }}
-        </div>
-        </div>
-      </div>
     </div>
     <div class="right tw-bg-white tw-relative">
       <div class="plan">
@@ -76,7 +66,7 @@
         </div>
         <AppButton
         class=" tw-px-16 tw-py-10"
-              
+
             >
             Забронировать
             </AppButton>
@@ -99,9 +89,7 @@ import DialogBook from "@/components/DialogBook.vue";
 import { computed, toRef, ref, watch, nextTick } from "vue";
 import { useRouter } from "vue-router";
 import { debounce } from "throttle-debounce";
-const floors = [
-  13,12,11,10,9,8,7,6,5,4,3,2,1
-]
+
 const roomsList = [
   {
     id: 1,
@@ -398,7 +386,7 @@ const showFlat = (flatId, flatStatus) => {
 
 const onMouseenter = (e, flat) => {
   showedPopup.value = true;
-  
+
   const { left, top } = e.srcElement.getBoundingClientRect();
   const { pageYOffset: pageY, pageXOffset: pageX } = window;
   flatPopup.value = {
