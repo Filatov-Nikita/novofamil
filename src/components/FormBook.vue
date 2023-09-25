@@ -60,6 +60,10 @@ export default {
     flatNumber: {
       required: true,
       type: Number
+    },
+    themeType: {
+      default: 'квартира',
+      type: String
     }
   },
   emits: ['close'],
@@ -68,7 +72,7 @@ export default {
       const payload = {
         name,
         cellphone,
-        theme: `Заявка на бронь квартира №${this.flatNumber}`
+        theme: `Заявка на бронь ${this.themeType} №${this.flatNumber}`
       };
       await this.$store.dispatch('getFeedback', payload);
       this.$notify({ type: 'success', text: 'Ваша заявка успешно отправлена!' });

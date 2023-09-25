@@ -2,7 +2,7 @@
   <div class="dialog-full callback tw-z-[910] bg-main" v-if="showed">
     <Header />
     <FormBook
-      v-bind="{ flatNumber }"
+      v-bind="{ flatNumber, themeType }"
       @close="$emit('update:showed', false)"
     />
   </div>
@@ -20,6 +20,10 @@ export default {
     flatNumber: {
       required: true,
       type: Number
+    },
+    themeType: {
+      default: 'квартира',
+      type: String
     }
   },
   emits: ['update:showed'],

@@ -171,6 +171,18 @@ const routes = [
     ]
   },
 
+  {
+    path: '/store-rooms',
+    component: () => import('@/layouts/PrimaryLayout.vue'),
+    children: [
+      {
+        path: '',
+        name: 'store-rooms',
+        component: () => import('@/pages/StoreRooms.vue'),
+      }
+    ]
+  },
+
 
   {
     path: '/:pathMatch(.*)*',
