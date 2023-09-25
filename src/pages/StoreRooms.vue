@@ -1,6 +1,7 @@
 <template>
   <div class="grid">
     <div class="left">
+      <Breadcrumbs class="tw-mb-30" />
       <h1 class="tw-text-white tw-font-nord tw-text-md2 2xl:tw-text-xl lg:tw-mb-[70px] 2xl:tw-mb-[90px">
         Кладовые
       </h1>
@@ -95,6 +96,15 @@
 import DialogBook from "@/components/DialogBook.vue";
 import { ref } from "vue";
 import { debounce } from "throttle-debounce";
+import { useStore } from "vuex";
+
+const store = useStore();
+
+store.commit('breadcrumbs/set', [
+  { label: 'Главная', to: '/' },
+  { label: 'О проекте', to: { name: 'about' } },
+  { label: 'Кладовые', to: { name: 'store-rooms' } },
+]);
 
 const roomsList = [
   {
@@ -483,7 +493,7 @@ function closePopup() {
     }
   }
   .left {
-    @apply tw-pl-16 lg:tw-pl-0 tw-pt-[84px] 2xl:tw-pt-[100px];
+    @apply tw-pl-16 lg:tw-pl-0 tw-pt-[40px] 2xl:tw-pt-[70px];
   }
   .right {
     @apply tw-p-16 lg:tw-p-[52px];

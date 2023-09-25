@@ -78,7 +78,7 @@
               <img class="tw-w-full" width="445" height="248" loading="lazy" src="@/assets/images/about/about-item.svg" alt="">
             </div>
             <p class="tw-text-white">
-              <router-link class="tw-text-orange" to="/">Вместительные кладовые</router-link> — отличное решение для хранения сезонных вещей вне квартиры. Храните лыжи, санки, детские коляски, велосипеды и даже автомобильные шины на подземном этаже с доступом на лифте
+              <router-link class="tw-text-orange" :to="{ name: 'store-rooms' }">Вместительные кладовые</router-link> — отличное решение для хранения сезонных вещей вне квартиры. Храните лыжи, санки, детские коляски, велосипеды и даже автомобильные шины на подземном этаже с доступом на лифте
             </p>
           </article>
           <article
