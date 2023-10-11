@@ -172,7 +172,7 @@ const routes = [
   },
 
   {
-    path: '/store-rooms',
+    path: '/kladovki',
     component: () => import('@/layouts/PrimaryLayout.vue'),
     children: [
       {
