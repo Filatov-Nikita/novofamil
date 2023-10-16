@@ -1,5 +1,5 @@
 <template>
-  <div class="tw-overflow-x-scroll app-scroll-x app-scroll-y tw-relative  xl:tw-ml-auto">
+  <div class="tw-overflow-x-scroll app-scroll-x app-scroll-y tw-relative">
     <!-- <img class="lg:tw-mx-0 tw-max-w-none tw-w-auto hfull" ref="img" width="2830" height="1428" src="@/assets/images/house-fasad.jpg" /> -->
     <PopupTouchMove v-if="tappable && showTouchPopup" @hide="showTouchPopup = false"/>
 

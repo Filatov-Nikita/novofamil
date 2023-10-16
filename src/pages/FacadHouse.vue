@@ -6,7 +6,6 @@
         <Breadcrumbs class="tw-mb-30" />
         <h1 class="h1">Подбор<br>На фасаде</h1>
       </div>
-      <PopupStorey v-if="activeStorey" :storey="activeStorey" />
       <HousePlan
         :activeStorey="hoverStorey"
         width="2280"
@@ -15,6 +14,7 @@
         @leave="onLeave"
       >
       </HousePlan>
+      <PopupStorey v-if="activeStorey" :storey="activeStorey" />
     </main>
     <Footer ref="footer" />
   </div>
