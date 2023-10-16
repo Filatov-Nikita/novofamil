@@ -334,12 +334,12 @@ export default {
     }
   }
   &__img {
-    max-width: none;
-    // height: 100%;
-    width: 100%;
+    max-width: 92%;
+    min-width: 250px;
     margin: auto;
-    object-fit: cover;
-    @apply tw-max-w-none  tw-h-[290px] lg:tw-h-[320px]  2xl:tw-h-[560px] md:tw-h-full;
+    max-height: 550px;
+    object-fit: contain;
+    object-position: center;
   }
 }
 </style>
