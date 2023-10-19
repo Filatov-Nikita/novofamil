@@ -138,8 +138,16 @@ export default {
     const getFlats = async () => {
       store.dispatch('loaders/start', 'loading flats');
       flats.value = await store.dispatch('flats/getFlats', makeFilter());
+      flatsWithNo13Floor();
       store.dispatch('loaders/end', 'loading flats');
     };
+
+    function flatsWithNo13Floor() {
+      if(flats.value === null) return;
+      flats.value = flats.value.filter((flat) => {
+        return flat.storey_number !== 13;
+      });
+    }
 
     function clearFilter() {
       filter.value = {
