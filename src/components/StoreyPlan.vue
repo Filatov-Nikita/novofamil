@@ -21,7 +21,7 @@
             v-for="(flat, index) in flatsMap"
             :key="index"
             style="mix-blend-mode: multiply"
-            opacity="0.4">
+          >
             <path
               :d="flat.polygon"
               class="flat"
@@ -51,7 +51,7 @@
         <li class="status-info before:tw-bg-positive">
           <span>квартира свободна</span>
         </li>
-        <li class="status-info before:tw-bg-orange">
+        <li class="status-info before:tw-bg-[#FF6B00]">
           <span>квартира забронирована</span>
         </li>
       </ul>
@@ -211,13 +211,13 @@ export default {
 }
 
 .flat {
-  opacity: 1;
+  opacity: 0;
   cursor: pointer;
 }
 
 .flat:hover,
 .flat-hover {
-  opacity: 0.75;
+  opacity: 0.4;
 }
 
 .flat--free {
@@ -225,11 +225,11 @@ export default {
 }
 
 .flat--booked {
-  fill: theme("colors.orange");
+  fill: #FF6B00;
 }
 
 .flat--sold {
-  fill: theme("colors.primary");
+  fill: #081924;
   cursor: auto !important;
 }
 
