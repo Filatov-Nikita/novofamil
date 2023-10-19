@@ -36,10 +36,10 @@
               @mouseleave="onMouseleave" />
           </g>
         </svg>
-        <div class="side side--top">Двор</div>
-        <div class="side side--left">ул. Красноводская</div>
-        <div class="side side--right">ул. Менделеева</div>
-        <div class="side side--bottom">ул. Акназарова</div>
+        <div class="side side--top">{{ streets[0] }}</div>
+        <div class="side side--right">{{ streets[1] }}</div>
+        <div class="side side--bottom">{{ streets[2] }}</div>
+        <div class="side side--left">{{ streets[3] }}</div>
       </div>
     </div>
 
@@ -110,6 +110,10 @@ export default {
       required: true,
       type: Object,
     },
+    entranceId: {
+      required: true,
+      type: Number,
+    }
   },
   emits: ["update:showed"],
   setup(props, { emit }) {
@@ -119,6 +123,14 @@ export default {
     const showedPopup = ref(null);
     const showedBook = ref(false);
     const map = ref(null);
+
+    const streets = computed(() => {
+      switch(props.entranceId) {
+        case 1: return [ 'Двор', 'ул. Менделеева', 'ул. Акназарова', 'ул. Красноводская' ];
+        case 2: return [ '', 'Двор', 'ул. Акназарова', 'ул. Красноводская' ];
+        case 3: return [ '', 'Двор', 'ул. Акназарова', 'ул. Красноводская' ];
+      }
+    });
 
     const viewbox = computed(
       () => `0 0 ${imageMap.value.width} ${imageMap.value.height}`
@@ -168,6 +180,7 @@ export default {
       storeyImg,
       flatsMap,
       flatPopup,
+      streets,
       showFlat,
       onMouseenter,
       onMouseleave,

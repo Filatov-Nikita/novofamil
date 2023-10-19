@@ -45,6 +45,7 @@
         <div class="map" v-if="storey && imageMap">
           <StoreyPlan
             class=""
+            :entranceId="storey.entrance"
             :imageMap="imageMap"
             @update:showed="showedFlat = $event" />
         </div>
