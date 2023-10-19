@@ -16,7 +16,7 @@
           fill="none"
           preserveAspectRatio="xMinYMin slice"
           >
-          
+
           <g
             v-for="(flat, index) in flatsMap"
             :key="index"
@@ -43,7 +43,7 @@
       </div>
     </div>
 
-    <div class="tw-pt-30">
+    <div class="tw-pt-[36px]">
       <ul class="tw-flex tw-flex-wrap tw-justify-center tw-gap-x-30 tw-gap-y-8">
         <li class="status-info before:tw-bg-[#081903a1]">
           <span>квартира продана</span>
@@ -306,7 +306,7 @@ export default {
 </style>
 <style lang="scss" scoped>
 .map-floor {
-  @apply tw-bg-white lg:tw-flex lg:tw-flex-col lg:tw-justify-center lg:tw-items-center tw-relative tw-gap-[36px] tw-p-16 tw-h-full;
+  @apply tw-bg-white lg:tw-flex lg:tw-flex-col lg:tw-justify-center lg:tw-items-center tw-relative tw-px-24 tw-py-32 tw-h-full;
   &__wrapper {
     @apply tw-relative  tw-overflow-x-auto;
     position: relative;
@@ -321,13 +321,10 @@ export default {
     }
   }
   &__img {
-    height: 40vh;
-    max-width: none;
-    // height: 100%;
-    max-height: 400px;
+    max-height: 600px;
     width: auto;
     margin: auto;
-    @apply tw-max-w-none md:tw-max-w-full md:tw-h-full;
+    @apply tw-max-w-full tw-h-full;
   }
 }
 </style>
