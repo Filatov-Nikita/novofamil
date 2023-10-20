@@ -1,7 +1,8 @@
 <template>
   <button
     class="btn-storey"
-    :class="{ 'btn-storey--active': active, 'btn-storey--disabled': disabled }">
+    :class="{ 'btn-storey--active': active, 'btn-storey--disabled': disabled }"
+    :disabled="disabled">
     {{ label }}
   </button>
 </template>
@@ -40,7 +41,8 @@ export default {
 }
 
 .btn-storey--disabled {
-  @apply tw-border-secondary/15 tw-text-secondary/15;
+  color: #1F5C68;
+  border-color: #1F5C68;
 }
 
 .btn-storey--active {
