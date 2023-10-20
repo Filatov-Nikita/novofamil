@@ -14,7 +14,6 @@
           "
           :viewBox="viewbox"
           fill="none"
-          preserveAspectRatio="xMinYMin slice"
           >
 
           <g
@@ -324,6 +323,7 @@ export default {
     max-height: 600px;
     width: auto;
     margin: auto;
+    object-fit: contain;
     @apply tw-max-w-full tw-h-full;
   }
 }
