@@ -27,7 +27,9 @@
                     <ButtonStorey
                       :label="storey.value"
                       :active="isActive(storey.id)"
-                      @click="changeStorey(storey.id)" />
+                      @click="changeStorey(storey.id)"
+                      :disabled="storey.value === '13' && entrance.id === 1"
+                    />
                   </div>
                 </div>
               </div>
