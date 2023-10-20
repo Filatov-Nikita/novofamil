@@ -77,12 +77,14 @@
             <div class="tw-mb-24">
               <img class="tw-w-full" width="445" height="248" loading="lazy" src="@/assets/images/about/klad.jpg" alt="">
             </div>
-            <p class="tw-text-white">
-              Кладовые — отличное решение для хранения сезонных вещей вне квартиры. Храните лыжи, санки, детские коляски, велосипеды и даже автомобильные шины на подземном этаже с доступом на лифте
+            <div>
+              <p class="tw-text-white">
+                Кладовые — отличное решение для хранения сезонных вещей вне квартиры. Храните лыжи, санки, детские коляски, велосипеды и даже автомобильные шины на подземном этаже с доступом на лифте
+              </p>
               <router-link class="tw-text-orange tw-underline tw-inline-block tw-mt-16" :to="{ name: 'store-rooms' }">
                 Смотреть кладовые
               </router-link>
-            </p>
+            </div>
           </article>
           <article
             class="tw-w-full md:tw-w-1/2 lg:tw-w-1/3 tw-py-16 md:tw-px-10 md:tw-py-24"
