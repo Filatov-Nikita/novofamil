@@ -80,10 +80,10 @@
                   class="map-flat__img"
                   :src="flat.images[visibleImage]"
                   style="" />
-                <div class="side side--top">Двор</div>
-                <div class="side side--left">ул. Красноводская</div>
-                <div class="side side--right">ул. Менделеева</div>
-                <div class="side side--bottom">ул. Акназарова</div>
+                <div class="side side--top">{{ streets[0] }}</div>
+                <div class="side side--right">{{ streets[1] }}</div>
+                <div class="side side--bottom">{{ streets[2] }}</div>
+                <div class="side side--left">{{ streets[3] }}</div>
               </div>
             </div>
           </div>
@@ -164,6 +164,7 @@
 <script>
 import DialogBook from "@/components/DialogBook.vue";
 import { GDialog } from "gitart-vue-dialog";
+import { mapGetters } from 'vuex';
 
 export default {
   props: {
@@ -228,6 +229,7 @@ export default {
     },
   },
   computed: {
+    ...mapGetters('entrances', ['streetPositions']),
     images() {
       const list = { plan: null, view: null, place: null };
 
@@ -247,6 +249,10 @@ export default {
     hasPlace() {
       return this.images.place !== null;
     },
+    streets() {
+      if(!this.flat) return [];
+      return this.streetPositions(this.flat.entrance);
+    }
   },
   components: {
     DialogBook,
@@ -262,15 +268,17 @@ export default {
 
 .side--left,
 .side--right {
+  width: 150px;
+  text-align: center;
   @apply tw-top-1/2 -tw-translate-y-1/2 -tw-rotate-90;
 }
 
 .side--left {
-  @apply tw-left-0 -tw-translate-x-[25px] lg:tw-translate-x-0 lg:-tw-left-[130px];
+  @apply tw-left-0 -tw-translate-x-[55px] lg:tw-translate-x-0 lg:-tw-left-[130px];
 }
 
 .side--right {
-  @apply tw-right-0 tw-translate-x-[25px] lg:tw-translate-x-0 lg:-tw-right-[130px];
+  @apply tw-right-0 tw-translate-x-[55px] lg:tw-translate-x-0 lg:-tw-right-[130px];
 }
 
 .side--bottom,

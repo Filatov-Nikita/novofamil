@@ -101,6 +101,7 @@
 import DialogBook from "@/components/DialogBook.vue";
 import { computed, toRef, ref, watch, nextTick } from "vue";
 import { useRouter } from "vue-router";
+import { useStore } from "vuex";
 import { debounce } from "throttle-debounce";
 
 export default {
@@ -117,6 +118,7 @@ export default {
   emits: ["update:showed"],
   setup(props, { emit }) {
     const router = useRouter();
+    const store = useStore();
     const imageMap = toRef(props, "imageMap");
     const flatPopup = ref(null);
     const showedPopup = ref(null);
@@ -124,11 +126,7 @@ export default {
     const map = ref(null);
 
     const streets = computed(() => {
-      switch(props.entranceId) {
-        case 1: return [ 'Двор', 'ул. Менделеева', 'ул. Акназарова', 'ул. Красноводская' ];
-        case 2: return [ '', 'Двор', 'ул. Акназарова', 'ул. Красноводская' ];
-        case 3: return [ '', 'Двор', 'ул. Акназарова', 'ул. Красноводская' ];
-      }
+      return store.getters['entrances/streetPositions'](props.entranceId);
     });
 
     const viewbox = computed(
