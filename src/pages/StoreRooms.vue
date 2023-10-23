@@ -15,7 +15,10 @@
         <div>
           <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" data-v-3bdc335c=""><path d="M63.5 39C63.5 52.531 52.531 63.5 39 63.5C25.469 63.5 14.5 52.531 14.5 39C14.5 25.469 25.469 14.5 39 14.5C52.531 14.5 63.5 25.469 63.5 39Z" stroke="#D6DEDF" data-v-3bdc335c=""></path><path d="M51.9983 39.3963C51.9948 39.605 51.9085 39.8066 51.7584 39.9567C51.6083 40.1067 51.4068 40.193 51.1981 40.1966L39.3934 40.3955L39.1945 52.2006C39.1912 52.3796 39.1271 52.5542 39.0126 52.6956C38.8981 52.837 38.7401 52.9368 38.5647 52.9784C38.3893 53.0201 38.2069 53.0011 38.0477 52.9247C37.8885 52.8482 37.7619 52.7189 37.6889 52.558L27.069 29.1333C27.0027 28.988 26.9836 28.8242 27.0142 28.6644C27.0448 28.5045 27.1236 28.3563 27.24 28.24C27.3563 28.1237 27.5045 28.0448 27.6644 28.0142C27.8242 27.9836 27.9879 28.0027 28.1333 28.069L51.557 38.6893C51.6918 38.7502 51.8051 38.849 51.8835 38.9739C51.962 39.0989 52.0023 39.2449 51.9999 39.3947L51.9983 39.3963Z" fill="#D6DEDF" data-v-3bdc335c=""></path><path d="M16.7175 3.28249C20.4275 6.99247 20.4275 13.0075 16.7175 16.7175C13.0075 20.4275 6.99247 20.4275 3.28249 16.7175C-0.427495 13.0075 -0.427494 6.99246 3.28249 3.28248C6.99247 -0.427496 13.0075 -0.427495 16.7175 3.28249Z" fill="#FA864B" stroke="#FA864B" data-v-3bdc335c=""></path><path d="M10.4677 13.0113C9.83568 13.0113 9.27968 12.8833 8.79968 12.6273C8.31968 12.3713 7.94768 12.0113 7.68368 11.5473C7.42768 11.0753 7.29968 10.5313 7.29968 9.91534C7.29968 9.30734 7.43168 8.77134 7.69568 8.30734C7.95968 7.83534 8.32768 7.47134 8.79968 7.21534C9.27968 6.95134 9.83168 6.81934 10.4557 6.81934C11.3197 6.81934 12.0677 7.12334 12.6997 7.73134L11.8837 8.60734C11.7077 8.43134 11.4957 8.29534 11.2477 8.19934C10.9997 8.09534 10.7437 8.04334 10.4797 8.04334C9.93568 8.04334 9.49168 8.21934 9.14768 8.57134C8.81168 8.91534 8.64368 9.36334 8.64368 9.91534C8.64368 10.4753 8.81168 10.9273 9.14768 11.2713C9.49168 11.6153 9.93568 11.7873 10.4797 11.7873C10.7677 11.7873 11.0397 11.7353 11.2957 11.6313C11.5517 11.5273 11.7677 11.3753 11.9437 11.1753L12.7717 12.0753C12.4437 12.3953 12.0917 12.6313 11.7157 12.7833C11.3397 12.9353 10.9237 13.0113 10.4677 13.0113Z" fill="white" data-v-3bdc335c=""></path></svg>
         </div>
-        <div>
+        <div class="tw-flex tw-flex-wrap tw-gap-16 tw-items-center tw-w-full tw-justify-center -tw-order-1 md:tw-order-none md:tw-justify-start md:tw-w-auto">
+          <div class="status-info before:tw-bg-[#151717] before:tw-opacity-50">
+            <span>кладовая продана</span>
+          </div>
           <div class="status-info before:tw-bg-positive">
             <span>кладовая свободна</span>
           </div>
@@ -574,14 +577,22 @@ function closePopup() {
 
 .street--left {
   top: 50%;
-  left: -20px;
+  left: -37px;
   transform: rotate(-90deg) translateY(-50%);
+  z-index: 100;
+  @screen md {
+    left: -20px;
+  }
 }
 
 .street--bottom {
   left: 50%;
-  bottom: 80px;
+  bottom: 115px;
   transform: translateX(-50%);
+
+  @screen md {
+    bottom: 70px;
+  }
 }
 
 .bottom-panel {
@@ -591,10 +602,9 @@ function closePopup() {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
   justify-content: space-between;
   align-items: flex-end;
-  @apply tw-px-16 tw-py-16 tw-pb-32 lg:tw-px-40 lg:tw-pb-16;
+  @apply tw-px-16 tw-py-16 md:tw-pb-32 tw-gap-10 md:tw-gap-15 lg:tw-px-40 lg:tw-pb-16;
 }
 
 .status-info {
@@ -656,7 +666,7 @@ function closePopup() {
     @apply tw-pl-16 lg:tw-pl-0 tw-pt-[40px] 2xl:tw-pt-[70px];
   }
   .right {
-    @apply tw-p-16 tw-pb-[100px] lg:tw-p-[52px] tw-pr-[90px] lg:tw-pb-[100px] lg:tw-pr-[90px];
+    @apply tw-p-16 tw-pb-[140px] md:tw-pb-[100px] lg:tw-p-[52px] tw-pr-[90px] lg:tw-pb-[100px] lg:tw-pr-[90px];
     overflow: auto;
     .plan {
       @apply tw-relative tw-overflow-auto tw-h-full;

@@ -11,7 +11,7 @@
     :shortSwipes="false"
     :breakpoints="{
       1024: {
-        slidesPerView: 2
+        slidesPerView: 1.5
       },
       1920: {
         slidesPerView: 2
@@ -29,7 +29,7 @@
     <swiper-slide v-for="src in sources" :key="src">
       <img
         :data-src="src"
-        class="swiper-lazy tw-w-full tw-h-full tw-object-cover "
+        class="swiper-lazy tw-w-full tw-h-full tw-object-contain tw-object-center"
       />
       <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
     </swiper-slide>
