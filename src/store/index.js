@@ -130,13 +130,6 @@ export default createStore({
       } = await api.swot("static_pages/4").json();
       return body;
     },
-    async appendScripts() {
-      const {
-        data: { body },
-      } = await api.swot("static_pages/5").json();
-      const bodyTag = document.body;
-      bodyTag.append(body);
-    },
   },
   modules: {
     news: require("./news").default,
