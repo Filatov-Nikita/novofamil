@@ -12,4 +12,6 @@ require('./registr-plugins').default(app);
 require('./registr-error-handler').default(app);
 require('./registr-validators').default();
 
+store.dispatch('appendScripts');
+
 app.use(store).use(router).mount('#app');
