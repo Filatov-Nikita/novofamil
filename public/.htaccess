@@ -1,6 +1,12 @@
-RewriteEngine On  
-  
-RewriteCond %{SCRIPT_FILENAME} !-d  
-RewriteCond %{SCRIPT_FILENAME} !-f  
+<IfModule mod_negotiation.c>
+  Options -MultiViews
+</IfModule>
 
-RewriteRule ^(.*)$ ./index.html?route=$1
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.php$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.php [L]
+</IfModule>
