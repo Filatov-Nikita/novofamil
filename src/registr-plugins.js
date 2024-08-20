@@ -4,6 +4,7 @@ import VueScreen from 'vue-screen';
 import Maska from 'maska';
 import Notifications from '@kyvg/vue3-notification'
 import tailwindConfig from '../tailwind.config.js'
+import ymGoal from '@/plugins/ymGoal.js';
 
 export default (app) => {
   const settings = {
@@ -14,6 +15,7 @@ export default (app) => {
     version: '2.1'
   }
 
+  app.use(ymGoal);
   app.use(vClickOutside);
   app.use(YmapPlugin, settings);
   app.use(Notifications);
