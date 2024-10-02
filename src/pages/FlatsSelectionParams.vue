@@ -91,7 +91,8 @@ export default {
       rooms: null,
       square: null,
       sort: 'price',
-      sortOrder: 'desc'
+      sortOrder: 'desc',
+      status: 'free',
     });
 
     const filterGetters = {
@@ -118,6 +119,9 @@ export default {
       },
       sortOrder: (filter, value) => {
         filter.sort_order = value;
+      },
+      status: (filter, value) => {
+        filter.status = value;
       },
     }
 
