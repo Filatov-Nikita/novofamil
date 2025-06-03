@@ -8,6 +8,7 @@ module.exports = defineConfig({
       .plugin('html')
       .tap(args => {
         args[0].title = 'ЖК Новый Фамильный от Агидель-ИнвестСтрой';
+        args[0].environment = process.env.NODE_ENV;
         return args;
       });
 
