@@ -69,7 +69,7 @@
           >
             <AppIcon name="close" size="36px" fill="white" />
           </button>
-          <iframe src="https://ucams.ufanet.ru/api/internal/embed/1484903718/?ttl=3600&autoplay=true&mute=true" width="100%" height="500" frameborder="0"></iframe>
+          <iframe allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" src="https://ucams.ufanet.ru/api/internal/embed/1704888561FMC35/?ttl=3600&autoplay=true&mute=true" width="100%" height="500" frameborder="0"></iframe>
           <!-- <img v-if="hasView" class="tw-w-auto tw-max-h-full" :src="images.view" alt="вид из окна" /> -->
         </template>
       </GDialog>
