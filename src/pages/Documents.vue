@@ -8,16 +8,22 @@
         </div>
 
         <div class="tw-text-base tw-text-gray tw-leading-120 2xl:tw-text-md xl:tw-pt-[84px] 2xl:tw-pt-[100px] xl:tw-pl-[36px]">
-          Разрешительная документация <br />
-          на сайте
-          <a
-            class="tw-text-blue tw-underline"
-            :href="$store.state.domrf"
-            target="_blank">
-            наш.дом.рф
-          </a>
+          <p>
+            Разрешительная документация <br />
+            на сайте
+            <a
+              class="tw-text-blue tw-underline"
+              :href="$store.state.domrf"
+              target="_blank">
+              наш.дом.рф
+            </a>
+          </p>
+          <div class="tw-mt-24">
+            <a class="tw-text-blue tw-underline" href="/policy.pdf" target="_blank">
+              Политика конфиденциальности
+            </a>
+          </div>
         </div>
-
       </div>
     </div>
   </app-page>
