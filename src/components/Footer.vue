@@ -12,7 +12,7 @@
             alt="логотип агидель-инвест-строй" />
         </a>
         <div
-          class="tw-mb-20 xl:tw-mb-0 tw-basis-full xl:tw-basis-[368px] tw-text-[8px] xl:tw-text-xxs tw-leading-100 tw-mr-20 tw-text-white">
+          class="tw-mb-12 xl:tw-mb-0 tw-basis-full xl:tw-basis-[300px] tw-text-[8px] xl:tw-text-xxs tw-leading-100 tw-mr-20 tw-text-white">
           © 2003-{{ currentYear }}, ООО СЗ «Агидель-ИнвестСтрой». Опубликованная на сайте
           информация носит рекламный характер и не является публичной офертой.
           Проектная декларация на&nbsp;сайте
@@ -26,14 +26,19 @@
 
         <div class="tw-hidden 2xl:tw-block tw-grow"></div>
 
-        <a
-          class="tw-hidden xl:tw-block tw-text-third tw-underline tw-text-xxs tw-mr-20 2xl:tw-mr-[82px]"
-          href="/policy.pdf"
-          download>
-          Политика конфиденциальности
-        </a>
+        <div class="tw-w-full tw-mb-12 tw-text-third tw-text-xxs xl:tw-mb-0 xl:tw-w-auto xl:tw-mr-40 2xl:tw-mr-[82px]">
+          <a
+            class="tw-underline tw-block tw-w-fit"
+            href="/policy.pdf"
+            download>
+            Политика конфиденциальности
+          </a>
+          <a class="tw-underline tw-block tw-w-fit tw-mt-4" href="/sogl.pdf" target="_blank">
+            Cогласие на обработку персональных данных
+          </a>
+        </div>
 
-        <div class="tw-flex tw-mr-8 lg:tw-mr-60 tw-space-x-8 lg:tw-space-x-12">
+        <div class="tw-flex tw-mr-8 lg:tw-mr-40 tw-space-x-8 lg:tw-space-x-12">
           <a
             v-for="item in soc"
             :key="item.name"
