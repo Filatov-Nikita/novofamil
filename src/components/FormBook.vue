@@ -39,8 +39,9 @@
           />
         </div>
         <div>
+          <FormSecretInput />
           <AppButton
-            class="tw-w-full tw-mb-24"
+            class="tw-w-full tw-mt-12 tw-mb-24"
             type="submit"
             :disabled="isSubmitting"
           >
@@ -59,6 +60,8 @@
   </div>
 </template>
 <script>
+import FormSecretInput from '@/components/FormSecretInput.vue';
+
 export default {
   props: {
     flatNumber: {
@@ -81,7 +84,10 @@ export default {
       await this.$store.dispatch('getFeedback', payload);
       this.$notify({ type: 'success', text: 'Ваша заявка успешно отправлена!' });
     }
-  }
+  },
+  components: {
+    FormSecretInput,
+  },
 }
 </script>
 <style scoped>

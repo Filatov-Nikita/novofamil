@@ -81,8 +81,9 @@
           />
         </div>
         <div>
+          <FormSecretInput />
           <AppButton
-            class="tw-w-full tw-mb-24"
+            class="tw-w-full tw-mt-12 tw-mb-24"
             type="submit"
             :disabled="isSubmitting"
           >
@@ -102,6 +103,7 @@
 </template>
 <script>
 import { mapActions, mapGetters } from "vuex";
+import FormSecretInput from '@/components/FormSecretInput.vue';
 
 export default {
   props: {
@@ -130,6 +132,9 @@ export default {
       this.$notify({ type: 'success', text: 'Ваша заявка успешно отправлена!' });
       this.$ym.fireCallbackGoal();
     }
+  },
+  components: {
+    FormSecretInput,
   }
 }
 </script>
