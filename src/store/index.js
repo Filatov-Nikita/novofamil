@@ -78,7 +78,7 @@ export default createStore({
     },
   },
   actions: {
-    async getFeedback(_c, { theme, name, cellphone }) {
+    async getFeedback(_c, { theme, name, cellphone, sogl }) {
       return await api.swot
         .post("feedback", {
           json: {
@@ -89,6 +89,7 @@ export default createStore({
             user_name: name,
             user_phone: cellphone,
             crm_lead: 0,
+            sogl: sogl ? 1 : 0,
             _dictionary: {
               user_name: "Имя пользователя",
             },
