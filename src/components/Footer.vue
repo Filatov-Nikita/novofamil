@@ -78,8 +78,8 @@ export default {
     return {
       soc: [
         {
-          name: "/sprite.svg#social-whatsapp",
-          link: "https://wa.me/73472242041",
+          name: "/sprite.svg#social-max",
+          link: "https://max.ru/id0278093946_bot",
         },
         {
           name: '/sprite.svg#social-telegram',
