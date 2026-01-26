@@ -7,7 +7,7 @@
           <h1 class="h1 tw-mb-32">Документы</h1>
         </div>
 
-        <div class="tw-text-base tw-text-gray tw-leading-120 2xl:tw-text-md xl:tw-pt-[84px] 2xl:tw-pt-[100px] xl:tw-pl-[36px]">
+        <div class="tw-text-base tw-text-gray tw-leading-120 tw-pb-32 2xl:tw-text-md xl:tw-pt-[84px] 2xl:tw-pt-[100px] xl:tw-pl-[36px]">
           <p>
             Разрешительная документация <br />
             на сайте
@@ -18,9 +18,12 @@
               наш.дом.рф
             </a>
           </p>
-          <div class="tw-mt-24">
-            <a class="tw-text-blue tw-underline" href="/policy.pdf" target="_blank">
+          <div class="tw-mt-24 tw-space-y-8">
+            <a class="tw-text-blue tw-underline tw-block tw-w-fit" href="/policy.pdf" target="_blank">
               Политика конфиденциальности
+            </a>
+            <a class="tw-text-blue tw-underline tw-block tw-w-fit" href="/sogl.pdf" target="_blank">
+              Cогласие на обработку персональных данных
             </a>
           </div>
         </div>
