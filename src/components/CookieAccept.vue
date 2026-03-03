@@ -1,7 +1,7 @@
 <template>
   <Transition class="tw-transition-opacity tw-duration-300" leave-active-class="tw-opacity-0">
     <div v-if="show" class="tw-rounded-[16px] tw-text-white tw-bg-base-700 tw-p-16">
-      <p class="tw-text-md">Мы используем файлы cookie!</p>
+      <p class="tw-text-md">Мы используем файлы куки!</p>
       <p class="tw-mt-8">
         Они нужны, чтобы обеспечить вам максимальное удобство на нашем веб-сайте.
         Вы можете запретить передачу этих данных в настройках вашего браузера.

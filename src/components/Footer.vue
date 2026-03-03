@@ -59,9 +59,9 @@
           3D-визуализация, дизайн и разработка
         </div>
 
-        <a href="#" class="tw-w-[78px] tw-h-[25px]">
+        <a href="#" class="tw-w-[78px]">
           <img
-            width="78"
+            width="119"
             height="25"
             class="tw-w-full"
             src="@/assets/images/logo-yes.svg"
